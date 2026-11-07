@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "libraryPath": "fonts/yoroll-cjk/i-ming/i-ming-dcda81582b61.ttf",
+  "kit": "yoroll-cjk",
+  "name": "一点明体 I.Ming",
+  "assetKind": "font",
+  "source": "https://github.com/ichitenfont/I.Ming/blob/master/LICENSE.md",
+  "variant": "library",
+  "license": "IPA",
+  "sha256": "dcda81582b6142e996cc1e4ab5c603b6cbae9c3e6e988ab4eff78977ccaba90c",
+  "reuseGuidance": "Roles: title, dialogue, body. Keep the bundled license files; use the generated role adapters and verify rendered text.",
+  "importedAt": "2026-11-07T12:46:24.362Z",
+  "note": "Only this selected asset was imported. Style references describe aesthetics, not asset ownership or origin."
+}

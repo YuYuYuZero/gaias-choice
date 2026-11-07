@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "libraryPath": "fonts/yoroll-cjk/smiley-sans/smiley-sans-1d3b0d5a4563.woff2",
+  "kit": "yoroll-cjk",
+  "name": "得意黑",
+  "assetKind": "font",
+  "source": "https://github.com/atelier-anchor/smiley-sans",
+  "variant": "library",
+  "license": "OFL-1.1",
+  "sha256": "1d3b0d5a45637dc3ad17637948d9957ff5efe055c3c1946d6125029a88c772aa",
+  "reuseGuidance": "Roles: title, short-label. Keep the bundled license files; use the generated role adapters and verify rendered text.",
+  "importedAt": "2026-11-07T12:46:13.158Z",
+  "note": "Only this selected asset was imported. Style references describe aesthetics, not asset ownership or origin."
+}

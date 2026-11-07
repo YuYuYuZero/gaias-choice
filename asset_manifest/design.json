@@ -1,0 +1,217 @@
+{
+  "title": "盖娅的选择",
+  "genre": "interactive_film_live_video",
+  "engine": "h5_dom",
+  "productionBudget": {"version":1,"scope":"new_game","media":{"images":{"maxAssets":15,"maxSubmissions":17,"required":false},"videos":{"maxAssets":0,"maxSubmissions":0,"required":false},"bgm":{"maxAssets":1,"maxSubmissions":1,"required":false},"models":{"maxAssets":0,"maxSubmissions":0,"required":false}},"highQualityContentImages":1,"retriesPerAsset":1,"validation":{"smokeRuns":1,"finalRuns":1,"repairRuns":2,"timeoutRetries":1},"id":"ec855d80ce3c183c"},
+  "editRounds": [
+    {
+      "round": "edit-1（离线演示加入开场影像 + 在线验收说明）",
+      "productionBudget": {"version":1,"scope":"edit","media":{"images":{"maxAssets":3,"maxSubmissions":5,"required":false},"videos":{"maxAssets":1,"maxSubmissions":2,"required":true},"bgm":{"maxAssets":0,"maxSubmissions":0,"required":false},"models":{"maxAssets":1,"maxSubmissions":2,"required":false}},"highQualityContentImages":1,"retriesPerAsset":1,"validation":{"smokeRuns":1,"finalRuns":1,"repairRuns":2,"timeoutRetries":1},"id":"59edc3370a05b82a"},
+      "required": ["一段制作期开场影像（春·屋顶），下载进游戏目录，离线演示可断网播放"],
+      "optional": [],
+      "deferred": ["图片（本轮未要求）", "3D 模型（2D 影游，无需）", "BGM（用户要求 WebAudio 合成）"],
+      "usage": { "videos": { "assets": 1, "submissions": 1 }, "images": { "assets": 0, "submissions": 0 }, "models": { "assets": 0, "submissions": 0 } }
+    }
+  ],
+  "editRound2": {
+    "round": "edit-2（删除离线演示提示文案）",
+    "productionBudget": {"version":1,"scope":"edit","media":{"images":{"maxAssets":3,"maxSubmissions":5,"required":false},"videos":{"maxAssets":0,"maxSubmissions":0,"required":false},"bgm":{"maxAssets":0,"maxSubmissions":0,"required":false},"models":{"maxAssets":1,"maxSubmissions":2,"required":false}},"highQualityContentImages":1,"retriesPerAsset":1,"validation":{"smokeRuns":1,"finalRuns":1,"repairRuns":2,"timeoutRetries":1},"id":"b54a655d6634e0bd"},
+    "required": ["删除离线演示的说明性提示文案"],
+    "optional": [],
+    "deferred": ["所有媒体生成（本轮未要求）"],
+    "usage": { "images": 0, "videos": 0, "models": 0 }
+  },
+  "demoOpeningClip": {
+    "status": "done",
+    "tool": "generate_game_video",
+    "job_id": "33da4f19-0eec-48c4-a679-4c52c776f845",
+    "first_frame": "assets/opening.webp",
+    "duration_s": 8, "ratio": "16:9",
+    "local_file": "assets/lib/online/2448a24affb8725089273629bb832cc3-mp4-d9405dcb95cd.glb",
+    "local_file_note": "下载导入时被保存为 .glb 扩展名，文件头为 ftyp M4V / H.264 的 MP4（约 1,025,200 字节）；浏览器按内容识别播放。远程地址作为加载失败时的备用。",
+    "remote_fallback": "https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4",
+    "usedIn": ["index.html#demo-video", "game.js playDemoClip（仅离线演示开场节点）"],
+    "notLiveEvidence": "制作期影像，只用于玩家主动进入的离线演示；不是实时生成证据，不替代实时视频验收"
+  },
+  "budgetUsage": {
+    "images": { "assets": 1, "submissions": 9, "highQualityContent": 1, "note": "批次 2：后台批次 mb-mw6ei7bd-xv476 提交 7 张可选静帧全部失败（生成服务报模型不可用），单独重试 ch2_duan 1 次仍失败；未再重试，剩余图片提交额度 8" },
+    "videos": { "assets": 0, "submissions": 0 },
+    "bgm": { "assets": 0, "submissions": 0 },
+    "models": { "assets": 0, "submissions": 0 }
+  },
+  "scope": {
+    "required": [
+      "实时视频互动主循环：开场视频 → 玩家行动（A/B 建议或自由输入）→ 实时生成剧情与续接视频 → 同一播放器切换",
+      "interactive-game.json（video.enabled:true，真实开场首帧 assets/opening.webp）",
+      "五段色阶叙事与 6 个固定抉择（rules 约束），抉择一影响抉择四",
+      "右上角提问计数 + 本局真实按键日志 + 终局回放（采样 100%）",
+      "第四段无选项走廊（按住前进，松开停）",
+      "授权书三结局交互（保留/拒绝/划掉→GAIA 报错→贴母亲身份卡）",
+      "B 支线碎片卡与回到抉择前；结局卡与重新开始；周目数",
+      "WebAudio 实时合成环境床与音效、静音按钮（M）",
+      "16:9 舞台、2.39:1 黑边、颗粒暗角光晕、字号等比缩放、竖屏提示",
+      "广告：App 内看广告回到最后抉择（仅 rewarded===true）、结局卡插屏一次；Web 隐藏广告入口",
+      "字体绑定：明体标题/正文，黑体 HUD",
+      "错误/未开启/鉴权/额度/超时提示，玩家主动进入的离线演示（全程标注）"
+    ],
+    "optional": [
+      "四张章节静帧（断/途/月/种）用于章节叠化卡与等待时的氛围层",
+      "母亲身份卡道具图（授权书贴卡）",
+      "两张结局静帧（施工完成 / 我等了很久）用于结局卡背景"
+    ],
+    "deferred": [
+      "BGM 文件：用户明确要求声音全部用 WebAudio 实时合成、不引入音频文件",
+      "制作期开场 CG 视频：运行时实时视频即核心，本轮视频预算为 0",
+      "玩家账号/云存档/排行榜/联机：用户未要求"
+    ]
+  },
+  "runtimeVideo": {
+    "mode": "live_runtime_via_YorollInteractive_sdk",
+    "first_frame": "assets/opening.webp",
+    "first_frame_format": "webp",
+    "first_frame_bytes_approx": 243976,
+    "first_frame_dimensions": "1536x1024",
+    "start_precheck": "pending：本地无鉴权浏览器无法调用 start()；需在在线预览中确认 opening_frame 返回",
+    "liveEvidence": "pending：asset_manifest/interactive-runtime-evidence.json 尚未生成"
+  },
+  "typography": {
+    "title": { "id": "source-han-sans-sc-medium", "file": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2", "usedIn": ["标题 h1", "章节名 .chapter", "章节卡", "结局/碎片卡标题", "授权书标题"] },
+    "body": { "id": "source-han-sans-sc-medium", "file": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2", "usedIn": ["字幕 .caption", "选项 .choice", "卡片正文", "授权书正文", "走廊独白"] },
+    "hud": { "id": "source-han-sans-sc-medium", "file": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2", "usedIn": ["提问计数 .tally", "状态 .status", "回放日志 .replay pre", "系统报错 .sys-error", "输入框"] },
+    "fallback": { "id": "source-han-sans-sc-medium" },
+    "css": "assets/fonts/yoroll/fonts.css（index.html 入口加载）",
+    "runtime": "assets/fonts/yoroll/font-runtime.js（index.html 入口加载）",
+    "coverage": "480/480 实际可见文案，无缺字（✎ 已从文案中移除）",
+    "change_reason": "批次 1 选的 i-ming 明体会把简体码位渲染成繁体/错误字形（实测“亲”“选”“岁”显示错误）；可选字体中没有可正确显示简体的衬线体，改为思源黑体统一三种角色，标题用大字距。用户要求的宋体/衬线风格因此未实现，记为 deviation。i-ming 文件仍在 assets 目录但不再加载。",
+    "applied": "已绑定（CSS 变量 --title/--body/--hud + data-font-role）；桌面 1440x900 与手机竖屏截图中标题、按钮、状态文字简体字形正确。走廊/授权书/回放/卡片界面尚未在截图中目检（pending 批次 3）"
+  },
+  "ads": {
+    "enabled": true,
+    "rewarded": { "placement": "revive", "label": "看广告回到最后一个抉择", "where": "非真结局的结局卡，仅 Android App 内显示", "grant": "仅 rewarded===true" },
+    "interstitial": { "placement": "round_end", "where": "结局卡出现后，每局最多一次" },
+    "webFallback": "隐藏广告入口，重新开始始终可用"
+  },
+  "optionalAssetStatus": {
+    "ch2_duan": "failed（批次 + 单独重试各 1 次，已用尽每项重试额度）",
+    "ch3_tu": "failed（批次 1 次）", "ch4_yue": "failed（批次 1 次）", "epilogue_zhong": "failed（批次 1 次）",
+    "ending_bright": "failed（批次 1 次）", "ending_room": "failed（批次 1 次）", "mother_id_card": "failed（批次 1 次）",
+    "fallback": "章节画面使用开场首帧 + 每章 CSS 色阶调色（春暖绿/断冷灰/途橙黄斜2°/月钛白/种灰绿/施工完成过曝白）；身份卡为 CSS 程序绘制。game.js 中 STILLS 对应项为 null，不请求不存在的文件。若批次 3 生成服务恢复，ch3_tu 等未单独重试的项可各重试 1 次，成功后填入 STILLS。"
+  },
+  "assets": [
+    {
+      "id": "opening",
+      "filename": "assets/opening.webp",
+      "status": "done",
+      "purpose": "实时视频开场首帧（interactive-game.json video.first_frame）、开始前的舞台海报、角色与风格锚点",
+      "tool": "generate_game_image",
+      "prompt": "Photorealistic cinematic film still, 16:9, 35mm grain, halation. Late spring rooftop of a seaside town; East Asian teenage girl Gaia, short black bob, oversized faded olive-green work jacket, white tee, worn white canvas sneakers, kneels on an old cylindrical water tank painting it fresh green; warm yellow-green slightly overexposed handheld feel; mother as backlit silhouette with paint can, face hidden; laundry lines, antennas, calm sea; faint artificial ring in the sky near a daytime moon. No text.",
+      "size": "1536x1024",
+      "quality": "high",
+      "transparent": false,
+      "dependencies": [],
+      "usedIn": ["interactive-game.json", "index.html#opening-poster"]
+    },
+    {
+      "id": "ch2_duan",
+      "filename": "ch2_duan.png",
+      "status": "planned_optional",
+      "purpose": "第二段「断」章节叠化静帧（Ken Burns 2%），等待生成时的氛围层",
+      "tool": "generate_ui_slots.content_images",
+      "prompt": "Photorealistic cinematic film still, 16:9, same girl Gaia (short black bob, olive-green work jacket, white canvas sneakers) seen small from behind, standing on a wide exposed wet seabed where the sea has retreated hundreds of meters; grey-white cold desaturated palette, locked-off static camera, overcast flat light, the full moon in the pale sky with a thin dark crack across its face. Film grain, vignette. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "transparent": false,
+      "reference": "assets/opening.webp",
+      "dependencies": ["opening"],
+      "usedIn": ["game.js 章节卡 chapter 2"]
+    },
+    {
+      "id": "ch3_tu",
+      "filename": "ch3_tu.png",
+      "status": "planned_optional",
+      "purpose": "第三段「途」章节叠化静帧",
+      "tool": "generate_ui_slots.content_images",
+      "prompt": "Photorealistic cinematic film still, 16:9, horizon tilted about 2 degrees. Sickly orange-yellow sandstorm desert; the girl Gaia (short black bob, olive-green work jacket now dusty, white canvas sneakers worn through) walks beside a rusty old humanoid robot with oil dripping from its knee joints; far away a colossal space elevator cable rises from the ground into the haze toward the sky. Film grain, vignette. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "transparent": false,
+      "reference": "assets/opening.webp",
+      "dependencies": ["opening"],
+      "usedIn": ["game.js 章节卡 chapter 3"]
+    },
+    {
+      "id": "ch4_yue",
+      "filename": "ch4_yue.png",
+      "status": "planned_optional",
+      "purpose": "第四段「月」章节静帧与走廊背景",
+      "tool": "generate_ui_slots.content_images",
+      "prompt": "Photorealistic cinematic film still, 16:9, perfectly symmetrical one-point perspective. A long seamless cold titanium-white corridor inside the moon, shadowless diffuse light, cold grey palette; the small figure of the girl Gaia (short black bob, olive-green work jacket, white canvas sneakers) seen from behind in the exact center walking toward a distant closed white door. Sterile, silent. Film grain. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "transparent": false,
+      "reference": "assets/opening.webp",
+      "dependencies": ["opening"],
+      "usedIn": ["game.js 章节卡 chapter 4", "走廊段背景"]
+    },
+    {
+      "id": "epilogue_zhong",
+      "filename": "epilogue_zhong.png",
+      "status": "planned_optional",
+      "purpose": "尾声「种」章节静帧 / 结局「起」结局卡背景",
+      "tool": "generate_ui_slots.content_images",
+      "prompt": "Photorealistic cinematic wide film still, 16:9. Vast grey-yellow barren earth seen from high above, a single thin line of fresh green sprouting across the land; first raindrops falling; in the sky the moon is split open with a missing chunk; tiny hand emerging from the soil in the foreground. Muted palette with only that green as color. Film grain, vignette. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "transparent": false,
+      "reference": "assets/opening.webp",
+      "dependencies": ["opening"],
+      "usedIn": ["game.js 章节卡 epilogue", "结局卡 起"]
+    },
+    {
+      "id": "mother_id_card",
+      "filename": "mother_id_card.png",
+      "status": "planned_optional",
+      "purpose": "授权书终局「贴上母亲的身份卡」的道具贴图",
+      "tool": "generate_game_image",
+      "prompt": "Photorealistic worn plastic identity card, top-down view, scratched and slightly bent, faded photo area showing only a blurred backlit silhouette of a woman, small chip, no readable text, no letters, transparent background.",
+      "size": "1024x1024",
+      "quality": "medium",
+      "transparent": true,
+      "dependencies": [],
+      "usedIn": ["game.js 授权书贴卡动画"]
+    },
+    {
+      "id": "ending_bright",
+      "filename": "ending_bright.png",
+      "status": "planned_optional",
+      "purpose": "结局「施工完成」结局卡背景",
+      "tool": "generate_ui_slots.content_images",
+      "prompt": "Photorealistic cinematic film still, 16:9. An empty coastal town wiped perfectly clean under blinding overexposed white light, no people, no laundry, the green water tank faded to white, absolute stillness; near-white palette. Film grain. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "transparent": false,
+      "reference": "assets/opening.webp",
+      "dependencies": ["opening"],
+      "usedIn": ["结局卡 施工完成"]
+    },
+    {
+      "id": "ending_room",
+      "filename": "ending_room.png",
+      "status": "planned_optional",
+      "purpose": "结局「我等了很久」结局卡背景",
+      "tool": "generate_ui_slots.content_images",
+      "prompt": "Photorealistic cinematic film still, 16:9, perfectly symmetrical. A sealed titanium-white room lit evenly forever, a single bowl of hot soup steaming on a white table, an unsigned sheet of paper beside it, an empty chair. Cold grey palette with only the faint steam. Film grain. No text on the paper visible.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "transparent": false,
+      "reference": "assets/opening.webp",
+      "dependencies": ["opening"],
+      "usedIn": ["结局卡 我等了很久"]
+    }
+  ],
+  "audio": {
+    "source": "WebAudio 实时合成（用户要求不引入音频文件）",
+    "beds": { "spring": "暖垫", "duan": "冷风", "tu": "沙暴噪声", "yue": "纯正弦 + 心跳", "zhong": "雨" },
+    "sfx": ["点击", "脚步", "呼吸", "水滴", "报错", "盖章/贴卡"]
+  }
+}

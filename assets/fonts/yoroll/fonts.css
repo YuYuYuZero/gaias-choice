@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Yoroll_source-han-sans-sc-medium";
+  src: url("source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --yoroll-font-title: "Yoroll_source-han-sans-sc-medium";
+  --yoroll-font-title-weight: 500;
+  --yoroll-font-title-style: normal;
+  --yoroll-font-body: "Yoroll_source-han-sans-sc-medium";
+  --yoroll-font-body-weight: 500;
+  --yoroll-font-body-style: normal;
+  --yoroll-font-hud: "Yoroll_source-han-sans-sc-medium";
+  --yoroll-font-hud-weight: 500;
+  --yoroll-font-hud-style: normal;
+  --yoroll-font-fallback: "Yoroll_source-han-sans-sc-medium";
+  --yoroll-font-fallback-weight: 500;
+  --yoroll-font-fallback-style: normal;
+}
+/* Low specificity: keep intentionally styled components. Explicit roles also support dynamic UI. */
+:where(body, button, input, select, textarea) { font-family: var(--yoroll-font-body); font-weight: var(--yoroll-font-body-weight); font-style: var(--yoroll-font-body-style); }
+:where([data-font-role="title"], .yoroll-font-title) { font-family: var(--yoroll-font-title); font-weight: var(--yoroll-font-title-weight); font-style: var(--yoroll-font-title-style); font-synthesis: none; }
+:where([data-font-role="body"], .yoroll-font-body) { font-family: var(--yoroll-font-body); font-weight: var(--yoroll-font-body-weight); font-style: var(--yoroll-font-body-style); font-synthesis: none; }
+:where([data-font-role="hud"], .yoroll-font-hud) { font-family: var(--yoroll-font-hud); font-weight: var(--yoroll-font-hud-weight); font-style: var(--yoroll-font-hud-style); font-synthesis: none; }

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "engine": "h5",
+  "selection": {
+    "title": {
+      "id": "source-han-sans-sc-medium",
+      "family": "Source Han Sans SC",
+      "weight": 500,
+      "style": "normal",
+      "path": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2"
+    },
+    "body": {
+      "id": "source-han-sans-sc-medium",
+      "family": "Source Han Sans SC",
+      "weight": 500,
+      "style": "normal",
+      "path": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2"
+    },
+    "hud": {
+      "id": "source-han-sans-sc-medium",
+      "family": "Source Han Sans SC",
+      "weight": 500,
+      "style": "normal",
+      "path": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2"
+    },
+    "fallback": {
+      "id": "source-han-sans-sc-medium",
+      "family": "Source Han Sans SC",
+      "weight": 500,
+      "style": "normal",
+      "path": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2"
+    }
+  },
+  "files": {
+    "assets/fonts/yoroll/fonts.css": "4a63e30fa3e4655dc52fed37fe4691fc0e37cc4165f6d0d927faf2c4c8c18bff",
+    "assets/fonts/yoroll/font-runtime.js": "da4e994d15169239f5a41df9a8ef47a463a03e004a112d83365796f03f868f9e"
+  },
+  "coverage": {
+    "title": {
+      "checkedCharacters": 480,
+      "fallbackCharacters": "",
+      "missingCharacters": ""
+    },
+    "body": {
+      "checkedCharacters": 480,
+      "fallbackCharacters": "",
+      "missingCharacters": ""
+    },
+    "hud": {
+      "checkedCharacters": 480,
+      "fallbackCharacters": "",
+      "missingCharacters": ""
+    }
+  },
+  "imported": [
+    {
+      "id": "source-han-sans-sc-medium",
+      "path": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2",
+      "bytes": 11686232,
+      "type": "fonts",
+      "kit": "yoroll-cjk",
+      "name": "思源黑体 Medium",
+      "assetKind": "font",
+      "license": "OFL-1.1",
+      "sourcePath": "fonts/yoroll-cjk/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2",
+      "provenancePath": "assets/fonts/yoroll/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2.source.json",
+      "reuseGuidance": "Roles: body, hud, button, numeric, fallback. Keep the bundled license files; use the generated role adapters and verify rendered text.",
+      "licenses": [
+        "assets/fonts/yoroll/source-han-sans-sc-medium/licenses/01-source-han-ofl.txt"
+      ]
+    }
+  ],
+  "appliedToScene": false
+}

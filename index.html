@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#000000">
+  <title>盖娅的选择</title>
+  <link rel="stylesheet" href="assets/fonts/yoroll/fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="assets/fonts/yoroll/font-runtime.js"></script>
+  <script src="yoroll-ads.js"></script>
+  <script src="input.js"></script>
+  <script src="socket.io.min.js"></script>
+  <script src="online.js"></script>
+  <script src="lockstep.js"></script>
+  <script src="interactive.js"></script>
+<script defer src="game.js"></script>
+</head>
+<body>
+  <main class="theatre">
+    <div class="frame" id="frame" data-ch="spring">
+      <section class="picture" id="stage" aria-label="影片主舞台">
+        <div class="kb" id="kb"><img class="still" id="still" src="assets/opening.webp" alt="屋顶上刷绿漆的水箱"></div>
+        <img class="opening-poster" id="opening-poster" alt="开场画面" hidden>
+        <div class="video-wrap" id="video-wrap" hidden>
+          <video class="scene-video" id="video" playsinline muted preload="auto" aria-label="当前段落视频"></video>
+          <video class="scene-video" id="video-next" playsinline muted preload="auto" aria-label="下一段落视频" hidden></video>
+        </div>
+        <video class="scene-video demo-video" id="demo-video" playsinline muted preload="none" aria-label="离线演示开场影像" hidden></video>
+        <div class="grade" aria-hidden="true"></div>
+        <div class="warm" id="warm" aria-hidden="true"></div>
+        <div class="stopfx" id="stopfx" aria-hidden="true"></div>
+        <canvas class="grain" id="grain" aria-hidden="true"></canvas>
+        <div class="vignette" aria-hidden="true"></div>
+        <div class="demo-tag" id="demo-tag" hidden></div>
+        <div class="pending-caption" id="pending-caption" role="status" hidden></div>
+        <button class="play-fallback" id="play-fallback" hidden>▶ 点击播放本段</button>
+        <form class="writer" id="action-form" hidden>
+          <label class="sr-only" for="action">写下她会做的事</label>
+          <input id="action" type="text" maxlength="120" autocomplete="off" placeholder="写下她会做的事，例如：她把鞋带系紧" disabled>
+          <span class="counter" id="counter" aria-hidden="true">0/120</span>
+          <button type="submit" id="send" disabled>提交</button>
+          <button type="button" class="ghost" id="writer-close">收起</button>
+        </form>
+      </section>
+
+      <header class="bar top">
+        <span class="chapter" id="chapter" data-font-role="title">一 · 春</span>
+        <span class="mode" id="mode" data-font-role="hud"></span>
+        <span class="tally" id="tally" data-font-role="hud" aria-label="提问计数">提问 0000</span>
+        <button class="icon" id="mute" data-font-role="hud" aria-pressed="false" title="静音（M）">声</button>
+        <button class="icon" id="drawer-open" data-font-role="hud" aria-controls="journey" aria-expanded="false" title="菜单">≡</button>
+      </header>
+
+      <section class="bar bottom deck" aria-label="字幕与抉择">
+        <div class="say">
+          <p class="caption" id="caption" data-font-role="body"></p>
+          <p class="status" id="status" role="status" aria-live="polite" data-font-role="hud">点击开始，连接实时互动服务。</p>
+          <div class="recover"><button class="retry" id="retry" hidden>查询原请求</button><button class="retry" id="prepare-retry" hidden>重试画面准备</button></div>
+        </div>
+        <div class="choices" id="choices" aria-label="抉择"></div>
+      </section>
+      <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+      <div class="overlay title-card" id="start-overlay">
+        <h1 data-font-role="title">盖娅的选择</h1>
+        <p class="sub" id="run-line" data-font-role="body">母亲被征召上月球那年，她十四岁。</p>
+        <div class="title-actions">
+          <button class="line-btn" id="start" data-font-role="body">▶ 开始</button>
+          <button class="line-btn small" id="demo-start" data-font-role="hud">离线演示</button>
+        </div>
+        <p class="title-status" id="title-status" role="status" data-font-role="hud"></p>
+        <p class="hint" id="title-hint" data-font-role="hud">点击 / 空格 / 回车推进 · 1 2 3 选择 · M 静音</p>
+      </div>
+
+      <div class="overlay chapter-card" id="chapter-card" hidden><span id="chapter-card-text" data-font-role="title"></span></div>
+
+      <div class="overlay corridor" id="corridor" hidden>
+        <div class="corridor-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <p class="mono-line" id="corridor-line" data-font-role="body"></p>
+        <p class="corridor-hint" id="corridor-hint" data-font-role="hud">按住鼠标或空格，往前走</p>
+        <div class="corridor-bar"><i id="corridor-progress"></i></div>
+        <button class="line-btn" id="corridor-door" hidden data-font-role="body">推开门</button>
+      </div>
+
+      <div class="overlay paper-wrap" id="paper-wrap" hidden>
+        <article class="paper" id="paper" aria-label="授权书">
+          <h2 data-font-role="title">授 权 书</h2>
+          <dl>
+            <div><dt>主体</dt><dd><span id="p-subject" class="subject">人类</span><span id="p-card" class="idcard" hidden><img id="p-card-img" alt="母亲的身份卡"></span></dd></div>
+            <div><dt>范围</dt><dd>地球生物圈</dd></div>
+            <div><dt>期限</dt><dd>永久</dd></div>
+            <div><dt>对价</dt><dd>无</dd></div>
+          </dl>
+          <p class="legal">一、授权方以本人名义并代表上述主体，自愿、不可撤销地将主体之全部存续、演化与处置之决定，委托予受托方执行。二、受托方有权对范围内一切生物与非生物要素进行重构、清除或保存，无需另行告知。三、本授权自签署时生效，不因授权方之后续状态变化而失效。四、本授权不设对价，授权方确认已知悉上述全部条款。</p>
+          <form class="rewrite" id="rewrite" hidden>
+            <label for="p-input" data-font-role="hud">新的主体标识</label>
+            <input id="p-input" type="text" maxlength="24" autocomplete="off" placeholder="键入标识">
+            <button type="submit" data-font-role="hud">确认</button>
+          </form>
+          <p class="sys-error" id="p-error" data-font-role="hud" hidden></p>
+          <div class="sign-line"><span>授权方签字</span><i id="p-sign"></i></div>
+          <div class="paper-actions" id="paper-actions"></div>
+        </article>
+      </div>
+
+      <div class="overlay replay" id="replay" hidden><pre id="replay-log" data-font-role="hud"></pre><p class="moon" id="replay-moon" data-font-role="body"></p><button class="line-btn" id="replay-next" hidden data-font-role="body">纸回到面前</button></div>
+
+      <div class="overlay card" id="card" hidden>
+        <div class="card-inner">
+          <span class="card-kind" id="card-kind" data-font-role="hud"></span>
+          <h2 id="card-title" data-font-role="title"></h2>
+          <div class="card-body" id="card-body" data-font-role="body"></div>
+          <p class="card-stop" id="card-stop" data-font-role="body"></p>
+          <p class="card-meta" id="card-meta" data-font-role="hud"></p>
+          <div class="card-actions" id="card-actions"></div>
+        </div>
+      </div>
+
+      <div class="rotate-hint" id="rotate-hint" data-font-role="hud">请横屏观看</div>
+    </div>
+  </main>
+
+  <dialog class="journey" id="journey" aria-labelledby="journey-title">
+    <div class="drawer-heading"><h2 id="journey-title" data-font-role="title">这一段</h2><button class="icon" id="drawer-close" aria-label="关闭">×</button></div>
+    <p class="transcript" id="narrative" data-font-role="body">开始后，可以在这里读到这一段的完整旁白。</p>
+    <div class="drawer-footer">
+      <button class="line-btn small" id="restart" hidden data-font-role="hud">重新开始</button>
+      <button class="line-btn small" id="demo" data-font-role="hud">离线演示</button>
+      <button class="line-btn small" id="show-evidence" hidden data-font-role="hud">查看本次播放验证记录</button>
+      <pre class="evidence" id="evidence" aria-label="脱敏播放验证记录" hidden></pre>
+    </div>
+  </dialog>
+</body>
+</html>

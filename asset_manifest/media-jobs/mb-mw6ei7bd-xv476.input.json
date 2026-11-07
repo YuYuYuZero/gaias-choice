@@ -1,0 +1,53 @@
+{
+  "content_images": [
+    {
+      "filename": "ch2_duan.png",
+      "prompt": "Photorealistic cinematic film still, 16:9, same girl (short black bob, oversized olive-green work jacket, white canvas sneakers) seen small from behind, standing on a wide exposed wet seabed where the sea has retreated hundreds of meters; grey-white cold desaturated palette, locked-off static camera, overcast flat light, the pale full moon in the sky with a thin dark crack across its face. Film grain, vignette. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "reference": "assets/opening.webp"
+    },
+    {
+      "filename": "ch3_tu.png",
+      "prompt": "Photorealistic cinematic film still, 16:9, horizon tilted about 2 degrees. Sickly orange-yellow sandstorm desert; the same girl (short black bob, dusty olive-green work jacket, white canvas sneakers worn through) walks beside a rusty old humanoid robot with oil dripping from its knee joints; far away a colossal space elevator cable rises from the ground into the haze toward the sky. Film grain, vignette. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "reference": "assets/opening.webp"
+    },
+    {
+      "filename": "ch4_yue.png",
+      "prompt": "Photorealistic cinematic film still, 16:9, perfectly symmetrical one-point perspective. A long seamless cold titanium-white corridor inside the moon, shadowless diffuse light, cold grey palette; the small figure of the same girl (short black bob, olive-green work jacket, white canvas sneakers) seen from behind in the exact center walking toward a distant closed white door. Sterile, silent. Film grain. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "reference": "assets/opening.webp"
+    },
+    {
+      "filename": "epilogue_zhong.png",
+      "prompt": "Photorealistic cinematic wide film still, 16:9. Vast grey-yellow barren earth seen from high above, a single thin line of fresh green sprouting across the land; first raindrops falling; in the sky the moon is split open with a missing chunk; a small hand emerging from the soil in the foreground. Muted palette with only that green as color. Film grain, vignette. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "reference": "assets/opening.webp"
+    },
+    {
+      "filename": "ending_bright.png",
+      "prompt": "Photorealistic cinematic film still, 16:9. The same seaside rooftop town wiped perfectly clean under blinding overexposed white light, no people, no laundry, the water tank faded to white, absolute stillness; near-white palette. Film grain. No text.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "reference": "assets/opening.webp"
+    },
+    {
+      "filename": "ending_room.png",
+      "prompt": "Photorealistic cinematic film still, 16:9, perfectly symmetrical. A sealed titanium-white room lit evenly, a single bowl of hot soup steaming on a white table, a blank sheet of paper beside it, an empty chair. Cold grey palette with only the faint steam. Film grain. No text, no writing visible.",
+      "size": "1536x1024",
+      "quality": "medium",
+      "reference": "assets/opening.webp"
+    },
+    {
+      "filename": "mother_id_card.png",
+      "prompt": "Photorealistic worn plastic identity card, top-down view, scratched and slightly bent, faded photo area showing only a blurred backlit silhouette of a woman, small metal chip, no readable text, no letters, no numbers, isolated object on transparent background.",
+      "size": "1024x1024",
+      "quality": "medium",
+      "transparent": true
+    }
+  ]
+}

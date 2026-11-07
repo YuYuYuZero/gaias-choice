@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "capabilities": {
+    "player_auth": false,
+    "cloud_save": false,
+    "leaderboards": false,
+    "multiplayer": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "libraryPath": "fonts/yoroll-cjk/source-han-sans-sc-medium/source-han-sans-sc-medium-443153c3de06.woff2",
+  "kit": "yoroll-cjk",
+  "name": "思源黑体 Medium",
+  "assetKind": "font",
+  "source": "https://github.com/adobe-fonts/source-han-sans/blob/master/LICENSE.txt",
+  "variant": "library",
+  "license": "OFL-1.1",
+  "sha256": "443153c3de06d231dc9a4ca67a8e3e2f575dd7ff0d3e2756a66e0d89207685e6",
+  "reuseGuidance": "Roles: body, hud, button, numeric, fallback. Keep the bundled license files; use the generated role adapters and verify rendered text.",
+  "importedAt": "2026-11-07T12:46:13.553Z",
+  "note": "Only this selected asset was imported. Style references describe aesthetics, not asset ownership or origin."
+}

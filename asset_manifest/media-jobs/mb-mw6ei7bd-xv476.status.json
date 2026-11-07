@@ -1,0 +1,31 @@
+{
+  "job_id": "mb-mw6ei7bd-xv476",
+  "status": "failed",
+  "pid": 350,
+  "started_at": "2026-11-07T12:50:07.629Z",
+  "total": 7,
+  "completed": 0,
+  "failed": 3,
+  "results": [
+    {
+      "kind": "image",
+      "id": "ch3_tu.png",
+      "ok": false,
+      "message": "图像生成失败：The model 'gpt-image-1' does not exist."
+    },
+    {
+      "kind": "image",
+      "id": "ch2_duan.png",
+      "ok": false,
+      "message": "图像生成失败：The model 'gpt-image-1' does not exist."
+    },
+    {
+      "kind": "image",
+      "id": "epilogue_zhong.png",
+      "ok": false,
+      "message": "图像生成失败：The model 'gpt-image-1' does not exist."
+    }
+  ],
+  "finished_at": "2026-11-07T12:50:09.370Z",
+  "error": "ENOENT: no such file or directory, rename '/mnt/workspaces/sessions/cbc999bc-a744-4c0d-92a7-d9522c72a363/project/asset_manifest/media-jobs/mb-mw6ei7bd-xv476.status.json.tmp' -> '/mnt/workspaces/sessions/cbc999bc-a744-4c0d-92a7-d9522c72a363/project/asset_manifest/media-jobs/mb-mw6ei7bd-xv476.status.json'"
+}
