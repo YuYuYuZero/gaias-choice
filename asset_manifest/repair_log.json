@@ -59,10 +59,13 @@
         "git diff --check passed",
         "Local browser start enters demo",
         "Local video decoded 1280x720, currentTime 4.22 seconds",
-        "First choice advances to chapter 2"
+        "First choice advances to chapter 2",
+        "GitHub Actions run 42402787816 completed success",
+        "Published index HTTP 200",
+        "Published MP4 HTTP 200, Content-Type video/mp4, 1025200 bytes",
+        "Live browser start and video playback verified: 1280x720, currentTime 2.789 seconds"
       ],
       "pending": [
-        "GitHub Pages deployment verification",
         "Real-time model backend not implemented; no paid video tasks submitted"
       ]
     }

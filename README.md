@@ -32,3 +32,5 @@ Pages 上的演示不会调用视频模型或产生生成费用。`interactive-g
 开场视频位于 `assets/videos/opening.mp4`。原始导出把它误命名为 `.glb`，现已根据文件内容改为 `.mp4`，未重新生成。
 
 2026-11-08 首次发布记录：构建成功，部署阶段报 `Timeout reached, aborting!`。这是部署等待超时，不能据此认定游戏代码有编译错误；重试结果以 Actions 和线上访问为准。
+
+修复后验证：静态发布流程 [42402787816](https://github.com/YuYuYuZero/gaias-choice/actions/runs/42402787816) 成功，线上首页和 MP4 均返回 HTTP 200，浏览器实测播放成功。

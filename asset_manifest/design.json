@@ -28,7 +28,7 @@
     "first_frame": "assets/opening.webp",
     "duration_s": 8, "ratio": "16:9",
     "local_file": "assets/videos/opening.mp4",
-    "local_file_note": "下载导入时被保存为 .glb 扩展名，文件头为 ftyp M4V / H.264 的 MP4（约 1,025,200 字节）；浏览器按内容识别播放。远程地址作为加载失败时的备用。",
+    "local_file_note": "原始导出误用 .glb 扩展名；2026-11-08 已改为 assets/videos/opening.mp4。文件头为 ftyp M4V，约 1,025,200 字节；本地浏览器实测解码为 1280×720 并播放。远程地址作为加载失败时的备用。",
     "remote_fallback": "https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4",
     "usedIn": ["index.html#demo-video", "game.js playDemoClip（仅离线演示开场节点）"],
     "notLiveEvidence": "制作期影像，只用于玩家主动进入的离线演示；不是实时生成证据，不替代实时视频验收"

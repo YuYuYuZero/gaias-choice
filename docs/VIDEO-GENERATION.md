@@ -132,7 +132,7 @@ curl --fail-with-body "https://ark.cn-beijing.volces.com/api/v3/contents/generat
 | POST `/frames` | 接收播放节点与末帧，用于保持下一幕连续性 |
 | GET `/plays/{play_id}` | 恢复该会话已有节点和任务 |
 
-字段的完整校验请逐项对应 `interactive.js` 的 `start`、`remember`、`submitPending`、`prepareVideo` 与恢复逻辑。此表是接入清单，不是已实现的后端。
+字段的完整校验请逐项对应 `interactive.js` 的 `start`、`remember`、`submitPending`、`createVideoPlayer` / `prepare` 与恢复逻辑。此表是接入清单，不是已实现的后端。
 
 在部署好的后端通过联调后，在 `game.js` 中创建 SDK 的位置显式传入配置，例如：
 
