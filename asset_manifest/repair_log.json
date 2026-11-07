@@ -12,7 +12,11 @@
       ],
       "unchanged": "interactive-game.json（video.enabled:true）、实时 SDK 流程、证据导出均未改动；演示影像不计入实时证据",
       "validation": {
-        "validate_game_ui": { "result": "passed", "source_fingerprint": "302670ede7d3880e10f5a3e776d50c8a5d94e2e7f79392f7e59494accd2edfa5", "scope": "首屏桌面 + 手机，无报错、无溢出" },
+        "validate_game_ui": {
+          "result": "passed",
+          "source_fingerprint": "302670ede7d3880e10f5a3e776d50c8a5d94e2e7f79392f7e59494accd2edfa5",
+          "scope": "首屏桌面 + 手机，无报错、无溢出"
+        },
         "demo_clip_playback_in_browser": "pending：自动化检查不点击进入离线演示；文件头已确认为 H.264 MP4，需在本地打开后点‘离线演示’目检",
         "live_video": "pending：仍需在线预览中完成开场 + 两次不同行动的实时视频验收"
       }
@@ -21,7 +25,10 @@
       "date": "2026-11-07",
       "complaint": "删除‘离线演示：播放随游戏附带的开场影像，之后按固定规则推进，不调用实时生成。’等所有离线演示提示文案",
       "rootCause": "上一轮为区分演示与实时生成，在状态栏、舞台浮标、按钮和剧情文字中加入了多处说明性文案",
-      "filesChanged": ["game.js", "index.html"],
+      "filesChanged": [
+        "game.js",
+        "index.html"
+      ],
       "fix": [
         "状态栏 3 处演示说明改为空",
         "舞台中央浮标‘离线演示 · 未调用实时生成’清空并始终隐藏",
@@ -31,6 +38,33 @@
         "保留：顶栏小字‘离线演示’模式标记（用于区分演示与实时生成，不是说明文案）"
       ],
       "verified": "validate_game_ui 通过（指纹 f62df0da…，桌面 + 手机首屏，无报错/溢出）；演示内状态栏为空的效果未自动点击验证，代码中相关文案已全部检索确认移除"
+    },
+    {
+      "date": "2026-11-08",
+      "complaint": "GitHub Pages deployment failed; need video model operation guide",
+      "rootCause": "Initial build succeeded; deploy timed out. Standalone export has no interactive backend; bundled MP4 was named .glb; package manifests were empty.",
+      "filesChanged": [
+        ".github/workflows/pages.yml",
+        "README.md",
+        "docs/VIDEO-GENERATION.md",
+        "game.js",
+        "assets/videos/opening.mp4",
+        "package.json",
+        "package-lock.json",
+        "asset_manifest/design.json"
+      ],
+      "fix": "Explicit static Pages workflow, standalone demo start, correct MP4 extension, valid manifests, generation and backend integration guide.",
+      "verified": [
+        "npm run check passed",
+        "git diff --check passed",
+        "Local browser start enters demo",
+        "Local video decoded 1280x720, currentTime 4.22 seconds",
+        "First choice advances to chapter 2"
+      ],
+      "pending": [
+        "GitHub Pages deployment verification",
+        "Real-time model backend not implemented; no paid video tasks submitted"
+      ]
     }
   ]
 }

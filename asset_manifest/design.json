@@ -27,7 +27,7 @@
     "job_id": "33da4f19-0eec-48c4-a679-4c52c776f845",
     "first_frame": "assets/opening.webp",
     "duration_s": 8, "ratio": "16:9",
-    "local_file": "assets/lib/online/2448a24affb8725089273629bb832cc3-mp4-d9405dcb95cd.glb",
+    "local_file": "assets/videos/opening.mp4",
     "local_file_note": "下载导入时被保存为 .glb 扩展名，文件头为 ftyp M4V / H.264 的 MP4（约 1,025,200 字节）；浏览器按内容识别播放。远程地址作为加载失败时的备用。",
     "remote_fallback": "https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4",
     "usedIn": ["index.html#demo-video", "game.js playDemoClip（仅离线演示开场节点）"],

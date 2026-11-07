@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+_site/
+.generated/
+node_modules/
+__pycache__/

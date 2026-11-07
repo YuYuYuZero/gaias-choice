@@ -309,9 +309,9 @@
     el.start.disabled = busy || pending;
     el['demo-start'].disabled = busy || pending;
     el['start-overlay'].hidden = busy || pending || Boolean(selected && (demo || !videoMode || visibleJob || !canOpen()));
-    el.start.textContent = selected && videoMode ? state().opening_error ? '▶ 重试开场' : '▶ 播放开场' : '▶ 开始';
+    el.start.textContent = !sdk || !sdk.configured ? '▶ 开始演示' : selected && videoMode ? state().opening_error ? '▶ 重试开场' : '▶ 播放开场' : '▶ 开始';
     el.demo.disabled = busy || pending;
-    el.demo.textContent = demo ? '回到实时影像' : '离线演示';
+    el.demo.textContent = demo ? (!sdk || !sdk.configured ? '返回标题' : '回到实时影像') : '离线演示';
     el.restart.disabled = busy || pending;
     el.restart.hidden = !selected && !expired;
     el['show-evidence'].hidden = demo || !videoMode || !sdk || typeof sdk.getEvidence !== 'function';
@@ -480,7 +480,7 @@
   async function startLive() {
     if (busy || hasPending()) return;
     gesture = true; Sound.init();
-    if (!sdk || !sdk.configured) { showError({ code: 'unconfigured' }); return; }
+    if (!sdk || !sdk.configured) { startDemo(); return; }
     if (!selected) { newRun(); logKey('开始', '开始'); }
     setBusy(true);
     try { applyAccess(await sdk.start()); await restoreView(true); }
@@ -774,7 +774,7 @@
     rewrite: '她贴上那张旧卡，签了字。月亮裂开一道口子。第一场雨落下来，土里伸出一只手。'
   };
   // Pre-rendered opening clip shipped with the game so the explicitly chosen demo has motion offline; it is never live evidence.
-  var DEMO_CLIP = { local: 'assets/lib/online/2448a24affb8725089273629bb832cc3-mp4-d9405dcb95cd.glb', remote: 'https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4' };
+  var DEMO_CLIP = { local: 'assets/videos/opening.mp4', remote: 'https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4' };
   var demoVideo = document.getElementById('demo-video');
   function playDemoClip() {
     demoVideo.onerror = function () { if (demoVideo.getAttribute('src') !== DEMO_CLIP.remote) { demoVideo.src = DEMO_CLIP.remote; demoVideo.play().catch(function () { el['play-fallback'].hidden = false; }); } else hideDemoClip(); };
@@ -952,7 +952,7 @@
   fitViewport();
   async function init() {
     titleLine(); renderTally(); applyChapter('spring', false); controls();
-    if (!sdk || !sdk.configured) { showError({ code: 'unconfigured' }); return; }
+    if (!sdk || !sdk.configured) { status('当前为演示版：预制开场影像与固定剧情，可体验分支选择。'); return; }
     if (!state().access) { status('点击开始，连接实时互动服务。'); return; }
     setBusy(true);
     try { await sdk.restore(); applyAccess(state().access); await restoreView(false); }
