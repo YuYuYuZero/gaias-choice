@@ -87,11 +87,14 @@
         "All 14 sequences have three valid local assets",
         "All sequences finish once and cancel timers",
         "Pause/resume, scene replacement and stale load cancellation unit checks passed",
-        "Browser verified branch fragment, back-to-choice replay, mainline scene change and pause control"
+        "Browser verified branch fragment, back-to-choice replay, mainline scene change and pause control",
+        "Browser mainline reaches moon corridor and authorization form",
+        "Refuse ending slideshow and ending card verified",
+        "GitHub Actions 42403935578 completed success",
+        "Published index, storyboard.js and desert.png returned HTTP 200",
+        "Live browser shows story controls and fixed choices"
       ],
-      "pending": [
-        "Published artifact verification"
-      ]
+      "pending": []
     }
   ]
 }
