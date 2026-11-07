@@ -26,7 +26,7 @@
     { a: '查母亲的账号', b: '查全部历史回复', fragment: '3421 问、22 答的档案页', stop: '屏幕不再滚动。', fx: 'terminal' },
     { a: '亲手拔下老铁的核心', b: '放弃上去', fragment: '老铁被删掉的记忆', stop: '老铁不动了。', fx: 'freeze' }
   ];
-  var DAYS = [1, 1, 9, 140, 233, 377, 1460];
+  var DAYS = [1, 1, 9, 1463, 1468, 1470, 1471];
   var FINAL = {
     keep: '保留「人类」，签字。',
     refuse: '拒绝签字。',
@@ -34,7 +34,7 @@
   };
   var ENDINGS = {
     done: { title: '施工完成', line: '极亮。极静。没有人。', still: 'bright' },
-    wait: { title: '我等了很久', line: '房间永远亮着，汤永远是热的。', still: 'room' },
+    wait: { title: '我等了很久', line: '投影重复着旧话，调水工程继续。汤一直是热的。', still: 'room' },
     rise: { title: '起', line: '月球裂开。第一场雨落回地面。月亮缺了一块。', still: 'zhong' },
     stay: { title: '留在天梯脚下', line: '沙慢慢盖住脚印。', still: 'tu' },
     road: { title: '停在路上', line: '鞋停在沙里。', still: 'tu' }
@@ -82,7 +82,7 @@
   }
   function logKey(key, label) {
     run.count += 1;
-    if (run.log.length < 400) run.log.push({ day: DAYS[currentStep()] || 1, key: String(key).slice(0, 8), label: String(label).slice(0, 40) });
+    if (run.log.length < 400) run.log.push({ day: storyDay(selected), key: String(key).slice(0, 8), label: String(label).slice(0, 40) });
     saveRun(); renderTally();
   }
   function titleLine() {
@@ -126,6 +126,13 @@
     stepCache[node.id] = step; return step;
   }
   function currentStep() { return selected ? stepOf(selected) : 1; }
+  function storyDay(node) {
+    var step = stepOf(node), day = DAYS[step] || 1;
+    if (step >= 4) for (var cur = node; cur; cur = parentOf(cur)) {
+      if (actionOf(cur) === DECISIONS[3].b) { day++; break; }
+    }
+    return day;
+  }
   // The room with the authorization form: the node reached by pulling the core (or one offering the signature).
   function isRoom(node) {
     if (!node || node.ending !== 'none') return false;
@@ -547,7 +554,7 @@
     else if (c.d === 4 && c.side === 'A') afterClip(node, function () { showTerminal(node); });
     else if (isRoom(node)) {
       if (!corridorDone[node.id]) { if (demo && storyboard) afterClip(node, function () { startCorridor(node); }); else startCorridor(node); }
-      else afterClip(node, openPaper);
+      else { if (demo && storyboard) storyboard.play('reunion'); afterClip(node, openPaper); }
     } else if (clipWaiter) clipWaiter.cancel();
   }
   function mono(text) { var pre = document.createElement('pre'); pre.className = 'mono'; pre.textContent = text; return pre; }
@@ -557,12 +564,13 @@
     if (d === 2) { var big = para('天梯还在。'); big.style.fontSize = '1.6em'; big.style.letterSpacing = '.4em'; big.style.textAlign = 'center'; return [para('门缝里塞进来一张纸，上面只有四个字：'), big]; }
     if (d === 3) return [routeMap(), para('铅笔画的。路过盐滩，绕开提问站的北面，天梯脚下画了一个圈。')];
     if (d === 4) return [mono(archiveText(pressedQuestion(node), true))];
-    return [mono('记忆块 7 / 7 · 已删除\n恢复片段：\n— 她出门那天，把鞋放在门口。\n— 她让我等你长大。\n— 最后一条：'), para('「你妈让我告诉你，别信你听到的。」')];
+    return [mono('记忆块 7 / 7 · 已删除\n恢复片段：\n— 我是沿海检修员老铁。\n— 她让我在检修路上等你。\n— 最后一条：'), para('「别把接待投影当成我。要看他们让你签的那张纸。」')];
   }
   function archiveText(pressed, all) {
     var answers = ['正在计算。', '条件不足。', '请稍后再问。', '会。', '不会。', '已记录。', '没有变化。', '请换一种问法。', '正在核实。', '数据不足。', '可以。', '暂时不能。', '请等待。', '已转交。', '无法回答。', '不必担心。', '一切正常。', '已经安排。', '再过一段时间。', '取决于你。', '已收到。', '不需要。'];
-    if (!all) return '提问站 · 账号查询\n账号        （母亲）· 已停用\n提问        208 条\n最后一条    今年会下雨吗？\n回复        正在计算。\n\n关联查询    GAIA\n' + (pressed ? '结果        1 条 · 第 1 天 · 今年会下雨吗？（代按）' : '结果        查无此人');
-    return '提问站 · 全部历史回复\n提问总数    3421\n不同答案    22（按顺序轮换）\n\n0001  今年会下雨吗？      → 正在计算。\n0002  海为什么退了？      → 条件不足。\n1730  月亮上那道缝是什么？ → 一切正常。\n3421  今年会下雨吗？      → 正在计算。\n\n答案表\n' + answers.join(' ') + '\n\n提问人 GAIA  ' + (pressed ? '→ 1 条（第 1 天）' : '→ 查无此人');
+    var rule = '\n\n母亲的工作批注：旧卡为生态监护员凭证，可认证 GAIA（地球生物圈）。保护主体覆盖整个生物圈时，必须停止抽水并释放月球储水。';
+    if (!all) return '提问站 · 账号查询\n账号        （母亲）· 已停用\n提问        208 条\n最后一条    今年会下雨吗？\n回复        正在计算。\n\n关联查询    GAIA\n' + (pressed ? '结果        1 条 · 第 1 天 · 今年会下雨吗？（代按）' : '结果        本程未发送提问' ) + rule;
+    return '提问站 · 全部历史回复\n提问总数    3421\n不同答案    22（按顺序轮换）\n\n0001  今年会下雨吗？      → 正在计算。\n0002  海为什么退了？      → 条件不足。\n1730  月亮上那道缝是什么？ → 一切正常。\n3421  今年会下雨吗？      → 正在计算。\n\n答案表\n' + answers.join(' ') + '\n\n提问人 GAIA  ' + (pressed ? '→ 1 条（第 1 天）' : '→ 本程未发送提问') + rule;
   }
   function routeMap() {
     var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
@@ -595,15 +603,15 @@
   }
   function closeCard() { el.card.hidden = true; }
   function cardNote(text) { var n = el['card-actions'].querySelector('.note'); if (!n) { n = document.createElement('p'); n.className = 'note'; el['card-actions'].appendChild(n); } n.textContent = text; }
-  function tallyMeta() { var m = meta(); return '已见结局 ' + m.endings.length + ' / 5 · 碎片 ' + m.fragments.length + ' / 5 · 第 ' + Math.max(1, m.runs) + ' 次进入'; }
+  function tallyMeta() { var m = meta(); return '已见结局 ' + m.endings.length + ' / ' + (demo ? 4 : 5) + ' · 碎片 ' + m.fragments.length + ' / 5 · 第 ' + Math.max(1, m.runs) + ' 次进入'; }
   function backToParent(node) { el.stopfx.removeAttribute('data-stop'); closeCard(); navigate(parentOf(node)); }
   function showFragment(node, d) {
     var info = DECISIONS[d];
     el.stopfx.dataset.stop = info.fx; Sound.drop(1);
     remember('fragments', d);
     var actions = [{ label: '回到抉择前', fn: function () { backToParent(node); } }];
-    if (node.ending === 'none') actions.push({ label: '收好，继续', fn: function () { el.stopfx.removeAttribute('data-stop'); closeCard(); } });
-    openCard({ kind: '碎 片', title: info.fragment, body: fragmentBody(d, node), stop: info.stop, meta: tallyMeta(), actions: actions });
+    if (node.ending === 'none') actions.unshift({ label: '收好，继续', fn: function () { el.stopfx.removeAttribute('data-stop'); closeCard(); } });
+    openCard({ kind: '碎 片', title: info.fragment, body: fragmentBody(d, node), stop: node.ending === 'none' ? '线索已收好，旅程继续。' : info.stop, meta: tallyMeta(), actions: actions });
   }
   function showTerminal(node) {
     openCard({ kind: '提问站 · 终端', title: '母亲的账号', body: [mono(archiveText(pressedQuestion(node), false))], actions: [{ label: '继续', fn: closeCard }] });
@@ -679,7 +687,8 @@
     var node = corridor.node;
     corridorDone[node.id] = true; el.corridor.hidden = true; Sound.stamp();
     renderChoices(node); controls();
-    if (/鞋/.test(node.narrative || '')) setTimeout(function () { el.warm.classList.add('on'); setTimeout(function () { el.warm.classList.remove('on'); }, 4200); }, 1600);
+    if (demo && storyboard) storyboard.play('reunion');
+    if (demo || /鞋/.test(node.narrative || '')) setTimeout(function () { el.warm.classList.add('on'); setTimeout(function () { el.warm.classList.remove('on'); }, 4200); }, 1600);
     afterClip(node, openPaper);
     release();
   }
@@ -739,7 +748,7 @@
     var value = el['p-input'].value.trim();
     if (!value) return;
     logKey('键入', '[键入] ' + value);
-    if (/^gaia$/i.test(value) || value === '盖娅') { paper.phase = 'error'; paper.message = 'E409 该标识已绑定地球生物圈，无法作为个体使用。'; }
+    if (/^gaia$/i.test(value) || value === '盖娅') { paper.phase = 'error'; paper.message = 'E409 GAIA 已绑定地球生物圈。请使用生态监护员凭证认证该主体。'; }
     else paper.message = 'E404 该标识不存在。';
     Sound.error(); renderPaper();
     el['p-error'].textContent = paper.message; el['p-error'].hidden = false;
@@ -770,16 +779,31 @@
 
   /* ---------- Offline demo: explicitly chosen, always labelled, no live generation ---------- */
   var DEMO_TEXT = {
-    open: '春天，屋顶。她给水箱刷完最后一道绿漆。终端里有一行字：「今年会下雨吗？」身份卡报错：GAIA 已被占用。母亲说：「那就抢回来。」',
-    1: ['海一天退两百米。她在水箱里数到第九天。门外有人敲门，月亮正面多了一道缝。', '她关掉终端。屏幕黑下去，录音停在第十四秒。'],
-    2: ['她没有开门。四年后，鞋底磨穿了，老铁的膝盖还在滴油。沙里躺着一个人，手边有一只滤水器。', '门外没有人。门缝里塞进来一张纸。灯灭了。'],
-    3: ['她拿走滤水器，没有回头。提问站的屏幕还亮着，三十年的问题都存在这里。', '她把水给了那个人。他画了一张图塞给她。风一过，沙盖住了脚印。'],
-    4: ['母亲的账号还在。天梯就在前面，老铁说它上不去了，它的核心在胸口。', '三千四百二十一个问题，二十二种答案，轮着用。屏幕停止滚动。'],
-    5: ['走廊很长。房间恒温二十二度，桌上一碗热汤。母亲背对着她：「鞋，我给你买了。」汤旁边是一张纸。', '她在天梯脚下坐下。老铁的膝盖不再滴油。沙慢慢盖住脚印。'],
-    keep: '她签了字。灯一盏一盏亮到最亮。海边的屋顶很干净，没有人。',
-    refuse: '她没有签字。房间一直亮着。汤一直是热的。',
-    rewrite: '她贴上那张旧卡，签了字。月亮裂开一道口子。第一场雨落下来，土里伸出一只手。'
-  };
+  "open": "那年她十四岁，在屋顶给水箱刷绿漆。母亲即将被征召到月球。母亲把旧工作卡留给她：生态监护员。卡背刻着 GAIA。她想用 GAIA 登记自己的名字，终端却说：该标识已属于地球生物圈。母亲说：「那就替它问问，今年会下雨吗？」",
+  "1": [
+    "她替母亲按下本周提问。终端只回复：正在计算。母亲乘征召船离开，留下旧卡和一句「等我回来，给你买鞋」。月球调水工程启动，海水每天退去两百米。母亲离开后的第九天，门外传来敲门声。月亮正面多了一道缝。",
+    "她关掉终端，把没发出去的录音保存下来。母亲没有责怪她。母亲乘征召船离开，把生态监护员旧卡留在她手里。调水工程启动，海水退去。第九天，门外传来敲门声。"
+  ],
+  "2": [
+    "她没有开门。第二天，门外只剩一行通向沙地的履带印。四年过去，母亲始终没有回来。十八岁的她带着旧卡，离开海边去找天梯。她循着废弃检修路找到老铁。它认出旧卡，答应带她去母亲工作的地方。出发第三天，老铁停住：前方有人倒在沙里，身边的滤水器还在运转。她的水只够一人撑到提问站。拿走滤水器能赶路；救人就得绕路找水。",
+    "她开了门，门外没有人。纸条写着「天梯还在」，旁边是一行履带印。屋里停了电，她把纸条和母亲的旧卡收在一起。四年后，十八岁的她循着纸条离开海边，去天梯找母亲。检修路上，老铁认出旧卡，答应带路。第三天，他们遇见了倒在沙里的人。她的水只够一人撑到提问站。拿走滤水器能赶路；救人就得绕路找水。"
+  ],
+  "3": [
+    "她取走滤水器，把仅剩的水留在那人手边，随后转身赶路。她不知道那点水能不能救他。老铁一路没有说话。第八天，他们抵达提问站。这里存着母亲的账号，也存着三十年的历史回复。",
+    "她留下给那个人喂水。等他醒来，水壶已经空了。他画出一口检修井和通向天梯的路线。她与老铁绕路补水，多走了一夜。第九天，他们终于抵达提问站。母亲的账号与历史回复都还在。"
+  ],
+  "4": [
+    "母亲的最后一条工作记录写着：月球系统只保护授权主体，其他生命都可能被当作资源。生态监护员的卡可认证 GAIA。若主体是整个生物圈，系统必须停止抽水，释放月球储水。离开提问站后，他们抵达天梯。备用电源已坏，供电槽与老铁的核心相同。老铁打开胸口：「我的核心够送你上去。拔下来，我就停了。你自己选。」",
+    "三千四百二十一个问题，二十二种答案轮换。它从未真正回答任何人。档案末页却有母亲的批注：监护员旧卡可认证 GAIA，让整个生物圈成为保护主体。补充规则：保护主体覆盖地球生物圈时，停止抽水，释放月球储水。她抄下这条规则。他们抵达天梯。电源已坏，只有老铁的核心能供电。老铁打开胸口：「拔下来，我就停了。你自己选。」"
+  ],
+  "5": [
+    "她把手放在老铁胸前。它说：「去吧。记得看看她是不是真的在那里。」她取出核心，装进天梯供电槽。老铁的声音停了，升降舱开始向上。舷窗外，地球越来越小。舱门在月球站打开，前面是一条通向白门的走廊。",
+    "她合上老铁的胸盖，放弃登梯，陪它在沙地上坐下。核心尚能维持声音，却已不能带动它走路。老铁播放母亲留下的最后一段留言。「别把接待投影当成我。要看他们让你签的那张纸。」天梯渐渐熄灭。"
+  ],
+  "keep": "她保留「人类」，签字。系统宣布：为保存人类样本，清除地表其余生态。月球灯光升到最亮，海边被划成无人保存区。她和人类样本留在月球。熟悉的屋顶空了，再也等不到雨。",
+  "refuse": "她没有签字，把旧卡收回口袋。系统等待授权，调水工程继续。母亲的投影重复着那句买鞋的话，始终不能回答她。她留在接待室里。汤一直是热的，地球依旧干涸。",
+  "rewrite": "旧卡认证通过。她将保护主体改成地球生物圈，签下名字。系统停止抽水，打开月球储水层。裂开的坝壳像一道月缺，水沿输送管线回到地球。后来，她回到海边。第一场雨里，一只手护住土中的嫩芽，屋顶又有了绿色。"
+};
   // Pre-rendered opening clip shipped with the game so the explicitly chosen demo has motion offline; it is never live evidence.
   var DEMO_CLIP = { local: 'assets/videos/opening.mp4', remote: 'https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4' };
   var demoVideo = document.getElementById('demo-video');
@@ -806,9 +830,8 @@
       return demoNode(parent, action, '汤还是热的。纸还在桌上。', parent.choices);
     }
     var d = step, next = DECISIONS[d + 1];
-    if (c.d === d && c.side === 'B') return demoNode(parent, action, DEMO_TEXT[d][1], [], 'loss');
+    if (c.d === d && c.side === 'B') return demoNode(parent, action, DEMO_TEXT[d][1], next ? [next.a, next.b] : [], d === 5 ? 'loss' : 'none');
     var text = DEMO_TEXT[d][0];
-    if (d === 4) text = (pressedQuestion(parent) ? '母亲的账号还在，下面一行是她自己按下的那个问题。' : '母亲的账号还在。她自己的名字，查不到。') + '天梯就在前面，老铁说它上不去了，它的核心在胸口。';
     if (c.side === 'free') text = '她' + action.replace(/^她/, '').slice(0, 40) + '。' + text;
     return demoNode(parent, action, text, next ? [next.a, next.b] : ['签字', '拒绝签字']);
   }

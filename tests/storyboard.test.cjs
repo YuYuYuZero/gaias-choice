@@ -18,19 +18,19 @@ function setup() {
   return {api:window.GaiaStoryboard,player,root:stage.children[0],timers,captions,states};
 }
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
-test('all 14 finite branches have 3 shots and existing local image assets',()=>{
-  const {api}=setup();assert.equal(Object.keys(api.scenes).length,14);
-  for(const key of ['opening',...Array.from({length:5},(_,i)=>[`${i+1}A`,`${i+1}B`]).flat(),'keep','refuse','rewrite']) {
-    assert.equal(api.scenes[key].length,3);
+test('all 15 finite sequences have complete shots and existing local image assets',()=>{
+  const {api}=setup();assert.equal(Object.keys(api.scenes).length,15);
+  for(const key of ['opening',...Array.from({length:5},(_,i)=>[`${i+1}A`,`${i+1}B`]).flat(),'keep','refuse','rewrite','reunion']) {
+    assert.ok(api.scenes[key].length >= 3);
     for(const shot of api.scenes[key]) assert.ok(fs.existsSync(api.images[shot[0]]),api.images[shot[0]]);
   }
 });
-test('each branch finishes exactly once after three shots, retaining final caption',async()=>{
+test('each branch finishes exactly once after all shots, retaining final caption',async()=>{
   const {api,player,root,captions,timers}=setup();const next=root.children[3].children[2];
   for(const [key,shots] of Object.entries(api.scenes)) {
     let complete=0;player.play(key);player.after(()=>complete++);await flush();
-    next.events.click();await flush();next.events.click();await flush();next.events.click();
-    assert.equal(complete,1,key);assert.equal(captions.at(-1),shots[2][1]);assert.equal(timers.size,0);
+    for(let i=0;i<shots.length;i++){next.events.click();await flush();}
+    assert.equal(complete,1,key);assert.equal(captions.at(-1),shots.at(-1)[1]);assert.equal(timers.size,0);
     next.events.click();assert.equal(complete,1);
   }
 });
@@ -48,6 +48,7 @@ test('choices stay gated through loading, pause and last shot; replay immediatel
   player.play('opening');assert.equal(states.at(-1),false);await flush();
   pause.events.click();assert.equal(states.at(-1),false);
   next.events.click();await flush();next.events.click();await flush();assert.equal(states.at(-1),false);
+  next.events.click();await flush();assert.equal(states.at(-1),false);
   next.events.click();assert.equal(states.at(-1),true);
   pause.events.click();assert.equal(states.at(-1),false);await flush();
   player.stop();assert.equal(states.at(-1),true);

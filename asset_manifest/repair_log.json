@@ -113,6 +113,30 @@
         "Browser: pressing 1 while paused does not advance story",
         "Browser: completing final shot reveals choices"
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "complaint": "故事时间、分支因果和母亲出场顺序不连贯",
+      "rootCause": "支线强制结束；分镜提前揭晓房间；身份卡和核心缺少铺垫；旅程日数混用",
+      "filesChanged": [
+        "game.js",
+        "storyboard.js",
+        "index.html",
+        "interactive-game.json",
+        "docs/STORYBOARD.md",
+        "asset_manifest/storyboard.json",
+        "tests/narrative.test.cjs",
+        "tests/storyboard.test.cjs",
+        "package.json"
+      ],
+      "fix": "前四支线汇流；明确四年跳时与救人多一天；旧卡和生态优先条款铺垫；核心供电代价；推门后独立重逢片段；更正结局数量及长字幕停留时间",
+      "verified": [
+        "语法检查通过",
+        "5项测试通过，覆盖16条汇流路线和终局",
+        "本地浏览器走通关闭终端→不开门→救人→全部档案→核心→走廊→推门→重逢→授权书",
+        "推门后的重逢未播完时授权书和选项均隐藏；播放完成才显示授权书",
+        "浏览器未见脚本错误"
+      ]
     }
   ]
 }
