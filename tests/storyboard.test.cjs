@@ -13,9 +13,9 @@ function setup() {
   const window={matchMedia:()=>({matches:false})};
   const document={hidden:false,createElement:()=>new Element(),addEventListener(){}};
   vm.runInNewContext(fs.readFileSync('storyboard.js','utf8'),{window,document,Image:Element,setTimeout:f=>{timers.set(++id,f);return id},clearTimeout:i=>timers.delete(i)});
-  const stage=new Element(),captions=[];
-  const player=window.GaiaStoryboard.create({stage,onCaption:t=>captions.push(t)});
-  return {api:window.GaiaStoryboard,player,root:stage.children[0],timers,captions};
+  const stage=new Element(),captions=[],states=[];
+  const player=window.GaiaStoryboard.create({stage,onCaption:t=>captions.push(t),onState:s=>states.push(s.finished)});
+  return {api:window.GaiaStoryboard,player,root:stage.children[0],timers,captions,states};
 }
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 test('all 14 finite branches have 3 shots and existing local image assets',()=>{
@@ -41,4 +41,14 @@ test('pause cancels timer; switching branches discards old completion; stop canc
   player.play('rewrite');await flush();player.finish();assert.equal(stale,0);
   player.play('2B');const length=captions.length;player.stop();await flush();
   assert.equal(captions.length,length);assert.equal(timers.size,0);assert.ok(root.hidden);
+});
+
+test('choices stay gated through loading, pause and last shot; replay immediately gates again',async()=>{
+  const {player,root,states}=setup();const [,pause,next]=root.children[3].children;
+  player.play('opening');assert.equal(states.at(-1),false);await flush();
+  pause.events.click();assert.equal(states.at(-1),false);
+  next.events.click();await flush();next.events.click();await flush();assert.equal(states.at(-1),false);
+  next.events.click();assert.equal(states.at(-1),true);
+  pause.events.click();assert.equal(states.at(-1),false);await flush();
+  player.stop();assert.equal(states.at(-1),true);
 });

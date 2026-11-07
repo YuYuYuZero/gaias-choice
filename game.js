@@ -41,7 +41,8 @@
   };
   var sdk = window.YorollInteractive && window.YorollInteractive.create({ onStatus: onStatus, media: PLAYER_CONFIG.media });
   var demo = false, videoMode = false, busy = false, gesture = false;
-  var storyboard = window.GaiaStoryboard && window.GaiaStoryboard.create({stage: el.stage, onCaption: function(text) { el.caption.textContent = text; }});
+  var storyboardPlaying = false;
+  var storyboard = window.GaiaStoryboard && window.GaiaStoryboard.create({stage: el.stage, onCaption: function(text) { el.caption.textContent = text; }, onState: function(state) { storyboardPlaying = !state.finished; controls(); }});
   function storyboardKey(node) { var c = classify(actionOf(node)); return !node.parent_id ? 'opening' : c.final || (c.d ? String(c.d) + c.side : 'opening'); }
   var nodes = [], jobs = [], selected = null, activeVideo = el.video, visibleJob = null;
   var retryMediaJob = null, retryFrameJob = null, preparedNodes = Object.create(null);
@@ -304,8 +305,9 @@
     var saved = state();
     return !demo && !(saved.access && saved.access.expired) && Boolean(saved.pending || saved.jobs.some(function (job) { return !terminal(job); }));
   }
-  function canAct() { return Boolean(selected && selected.ending === 'none' && !busy && !hasPending() && !(state().access && state().access.expired) && (demo || !videoMode || !retryMediaJob && preparedNodes[selected.id] && visibleJob && visibleJob.node.id === selected.id)); }
+  function canAct() { return Boolean(selected && selected.ending === 'none' && !(demo && storyboardPlaying) && !busy && !hasPending() && !(state().access && state().access.expired) && (demo || !videoMode || !retryMediaJob && preparedNodes[selected.id] && visibleJob && visibleJob.node.id === selected.id)); }
   function controls() {
+    el.choices.hidden = demo && storyboardPlaying;
     var pending = hasPending(), allowed = canAct(), expired = state().access && state().access.expired;
     el.action.disabled = !allowed; el.send.disabled = !allowed;
     el.start.disabled = busy || pending;
@@ -916,6 +918,7 @@
   });
   function visible(node) { return node && !node.hidden; }
   function pressFirst(container, index) {
+    if (container.hidden) return false;
     var buttons = Array.prototype.filter.call(container.querySelectorAll('button'), function (b) { return !b.hidden && !b.disabled; });
     if (buttons[index]) { buttons[index].click(); return true; }
     return false;
@@ -937,7 +940,7 @@
     if (event.repeat) return;
     if (target && target.tagName === 'BUTTON' && (key === ' ' || key === 'Enter')) return;
     var idx = key === '2' ? 1 : key === '3' ? 2 : 0, label = null;
-    function hit(container) { var list = Array.prototype.filter.call(container.querySelectorAll('button'), function (b) { return !b.hidden && !b.disabled; }); var b = list[idx]; if (b) label = b.textContent.replace(/^\d+|\d+$/g, '').trim(); return pressFirst(container, idx); }
+    function hit(container) { if (container.hidden) return false; var list = Array.prototype.filter.call(container.querySelectorAll('button'), function (b) { return !b.hidden && !b.disabled; }); var b = list[idx]; if (b) label = b.textContent.replace(/^\d+|\d+$/g, '').trim(); return pressFirst(container, idx); }
     var handled = false;
     if (visible(el.replay)) handled = !el['replay-next'].hidden && (el['replay-next'].click(), label = '纸回到面前', true);
     else if (visible(el.card)) handled = hit(el['card-actions']);

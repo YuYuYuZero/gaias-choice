@@ -36,6 +36,7 @@
     transport.append(count,pause,next); root.appendChild(transport); stage.appendChild(root);
     var shots = [], index = 0, active = 0, timer = null, listener = null, finished = true, paused = false, generation = 0;
     var reduced = global.matchMedia('(prefers-reduced-motion: reduce)');
+    function notifyState() { if (options.onState) options.onState({ finished: finished }); }
     function cancelTimer() { clearTimeout(timer); timer = null; }
     function updateControls() {
       pause.textContent = finished ? '重播' : paused ? '播放' : '暂停';
@@ -50,7 +51,7 @@
       if (!paused && !finished && !document.hidden) timer = setTimeout(advance, index === 0 ? 5200 : 4300);
     }
     function complete() {
-      cancelTimer(); finished = true; updateControls();
+      cancelTimer(); finished = true; updateControls(); notifyState();
       if (listener) { var fn = listener; listener = null; fn(); }
     }
     function show() {
@@ -78,7 +79,7 @@
     }
     function advance() { if (finished) return; cancelTimer(); if (index + 1 >= shots.length) complete(); else { index++; show(); } }
     pause.addEventListener('click',function () {
-      if (finished) { index = 0; finished = false; paused = false; show(); return; }
+      if (finished) { index = 0; finished = false; paused = false; notifyState(); show(); return; }
       paused = !paused; updateControls(); schedule();
     });
     next.addEventListener('click',advance);
@@ -87,11 +88,11 @@
     return {
       play: function (key) {
         cancelTimer(); listener = null; generation++; shots = scenes[key] || scenes.opening;
-        index = 0; finished = false; paused = false; root.hidden = false; show();
+        index = 0; finished = false; paused = false; root.hidden = false; notifyState(); show();
         shots.forEach(function (shot) { var preload = new Image(); preload.src = images[shot[0]]; });
       },
       after: function (fn) { if (finished) { fn(); return function () {}; } listener = fn; return function () { if (listener === fn) listener = null; }; },
-      stop: function () { cancelTimer(); generation++; listener = null; finished = true; root.hidden = true; layers.forEach(function(img){img.onload=null;img.onerror=null;}); },
+      stop: function () { cancelTimer(); generation++; listener = null; finished = true; root.hidden = true; notifyState(); layers.forEach(function(img){img.onload=null;img.onerror=null;}); },
       finish: complete
     };
   }

@@ -95,6 +95,24 @@
         "Live browser shows story controls and fixed choices"
       ],
       "pending": []
+    },
+    {
+      "date": "2026-11-08",
+      "complaint": "Choices appear before story sequence completes",
+      "rootCause": "Choice visibility and input gating did not observe storyboard completion",
+      "filesChanged": [
+        "game.js",
+        "storyboard.js",
+        "index.html",
+        "tests/storyboard.test.cjs"
+      ],
+      "fix": "Gate choices and keyboard activation until entire sequence completes; reset gate immediately on replay and navigation",
+      "verified": [
+        "4 tests passed",
+        "Browser: first, second and final shot hide choices while paused",
+        "Browser: pressing 1 while paused does not advance story",
+        "Browser: completing final shot reveals choices"
+      ]
     }
   ]
 }
