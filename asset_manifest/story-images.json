@@ -1,0 +1,42 @@
+{
+  "reference": "assets/opening.webp",
+  "provenance": "Generated with built-in image_gen using the existing opening as a style and character reference",
+  "assets": [
+    {
+      "id": "shore",
+      "path": "assets/story/shore.png",
+      "source": "exec-bf8a3656-0113-435e-a83c-4ff5562b9672.png",
+      "status": "generated-and-visually-inspected"
+    },
+    {
+      "id": "desert",
+      "path": "assets/story/desert.png",
+      "source": "exec-2329fb6c-751b-46a6-95ff-0f1e54aeecd9.png",
+      "status": "generated-and-visually-inspected"
+    },
+    {
+      "id": "terminal",
+      "path": "assets/story/terminal.png",
+      "source": "exec-f91fd165-80ef-4400-82a6-7363e064eb1d.png",
+      "status": "generated-and-visually-inspected"
+    },
+    {
+      "id": "room",
+      "path": "assets/story/room.png",
+      "source": "exec-983e0d92-c9bc-4103-8649-30df5e00f2d4.png",
+      "status": "generated-and-visually-inspected"
+    },
+    {
+      "id": "rain",
+      "path": "assets/story/rain.png",
+      "source": "exec-82bb1392-6f22-4cac-928b-0d313b4efbb6.png",
+      "status": "generated-and-visually-inspected"
+    },
+    {
+      "id": "empty",
+      "path": "assets/story/empty.png",
+      "source": "exec-62c15c36-42be-43f9-a8be-a77b8f9359f0.png",
+      "status": "generated-and-visually-inspected"
+    }
+  ]
+}

@@ -208,3 +208,30 @@ button:focus-visible,input:focus-visible{outline:1px solid var(--accent);outline
   .play-fallback{font-size:15px}
 }
 @media (prefers-reduced-motion:reduce){.kb,.corridor.walking .corridor-lines i{animation:none}}
+
+/* Offline illustrated sequences: two layers crossfade while the camera drifts. */
+.story-cinema{position:absolute;inset:0;z-index:1;overflow:hidden;background:#111}
+.story-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.25s ease;animation:story-camera 10s ease-out both;will-change:transform,opacity}
+.story-still.is-visible{opacity:1}
+@keyframes story-camera{from{transform:scale(1.01)}to{transform:scale(var(--shot-zoom,1.14))}}
+.story-atmosphere{position:absolute;inset:-10%;pointer-events:none;transition:background 1.5s,opacity 1.5s;opacity:.35}
+.story-atmosphere[data-effect=mist]{background:linear-gradient(100deg,transparent,#e4e8dc55,transparent);animation:story-drift 12s ease-in-out infinite alternate}
+.story-atmosphere[data-effect=sand],.story-atmosphere[data-effect=dust]{background:radial-gradient(ellipse at 30% 80%,#bda17166,transparent 65%),repeating-linear-gradient(172deg,transparent 0 70px,#dbc9a818 72px,transparent 74px);animation:story-drift 6s linear infinite alternate}
+.story-atmosphere[data-effect=scan]{background:repeating-linear-gradient(0deg,transparent 0 5px,#a6ffc51a 6px,transparent 7px),radial-gradient(ellipse at 50% 50%,#7dc69544,transparent 60%);animation:story-pulse 4s ease-in-out infinite alternate}
+.story-atmosphere[data-effect=steam]{background:radial-gradient(ellipse at 50% 70%,#ffffff60,transparent 35%);animation:story-steam 6s ease-in-out infinite}
+.story-atmosphere[data-effect=rain]{background:repeating-linear-gradient(108deg,transparent 0 35px,#d9edff60 36px,transparent 37px,transparent 74px);animation:story-rain .8s linear infinite;opacity:.24}
+.story-atmosphere[data-effect=black]{background:#000;animation:story-darken 4s ease forwards}
+.story-atmosphere[data-effect=white]{background:#fff;animation:story-brighten 5s ease forwards}
+.story-atmosphere[data-effect=light]{background:radial-gradient(ellipse at 80% 20%,#fff4bf66,transparent 60%);animation:story-pulse 7s ease-in-out infinite alternate}
+.story-atmosphere[data-effect=cold]{background:linear-gradient(90deg,#9badbd22,transparent,#dce8ff33)}
+@keyframes story-drift{from{transform:translate(-3%,1%)}to{transform:translate(3%,-1%)}}
+@keyframes story-pulse{from{opacity:.1}to{opacity:.4}}
+@keyframes story-steam{0%{transform:translateY(4%);opacity:0}50%{opacity:.35}100%{transform:translateY(-8%);opacity:0}}
+@keyframes story-rain{to{background-position:-45px 140px}}
+@keyframes story-darken{from{opacity:0}to{opacity:.88}}
+@keyframes story-brighten{from{opacity:.05}to{opacity:.6}}
+.story-transport{position:absolute;right:2%;bottom:3%;display:flex;align-items:center;gap:.8em;z-index:1;background:#080b0bc9;border:1px solid #ffffff25;border-radius:3px;padding:.4em .65em;color:#e8e3d4;font-family:var(--hud);font-size:clamp(11px, .75em, 16px)}
+.story-transport button{background:none;border:0;padding:.45em;color:inherit;min-height:32px}
+.story-count{font-variant-numeric:tabular-nums;color:#c1b9a3;letter-spacing:.12em}
+.is-paused .story-still,.is-paused .story-atmosphere{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.story-still,.story-atmosphere{animation:none!important;transition:none!important}.kb{animation:none}}

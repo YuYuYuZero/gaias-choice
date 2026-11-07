@@ -68,6 +68,30 @@
       "pending": [
         "Real-time model backend not implemented; no paid video tasks submitted"
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "complaint": "Use slideshow-style offline storytelling to enrich every enumerable option; keep README product-focused",
+      "rootCause": "Offline story previously reused the opening image for all scenes",
+      "filesChanged": [
+        "storyboard.js",
+        "game.js",
+        "style.css",
+        "index.html",
+        "assets/story/",
+        "README.md",
+        "docs/STORYBOARD.md"
+      ],
+      "fix": "Six reference-guided cinematic illustrations, 14 sequences/42 shots, camera drift/crossfade/weather, pause/replay/next controls, cards after sequence completion; preserve live runtime",
+      "verified": [
+        "All 14 sequences have three valid local assets",
+        "All sequences finish once and cancel timers",
+        "Pause/resume, scene replacement and stale load cancellation unit checks passed",
+        "Browser verified branch fragment, back-to-choice replay, mainline scene change and pause control"
+      ],
+      "pending": [
+        "Published artifact verification"
+      ]
     }
   ]
 }

@@ -213,5 +213,12 @@
     "source": "WebAudio 实时合成（用户要求不引入音频文件）",
     "beds": { "spring": "暖垫", "duan": "冷风", "tu": "沙暴噪声", "yue": "纯正弦 + 心跳", "zhong": "雨" },
     "sfx": ["点击", "脚步", "呼吸", "水滴", "报错", "盖章/贴卡"]
-  }
+  },
+  "offlineStoryboard": {
+  "scope": "14 finite story sequences, 42 shots, 6 generated illustrations plus existing opening",
+  "runtime": "local images + CSS motion, no inference requests",
+  "manifest": "asset_manifest/storyboard.json",
+  "source": "storyboard.js",
+  "videoGenerationTasks": 0
+}
 }

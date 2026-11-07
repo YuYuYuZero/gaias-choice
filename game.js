@@ -16,7 +16,7 @@
     decodeTimeoutMs: 30000, playTimeoutMs: 15000, stallTimeoutMs: 15000
   };
   // Chapter stills are optional; missing ones fall back to the opening frame under the chapter's colour grade.
-  var STILLS = { spring: 'assets/opening.webp', duan: null, tu: null, yue: null, zhong: null, bright: null, room: null, card: null };
+  var STILLS = { spring: 'assets/opening.webp', duan: 'assets/story/shore.png', tu: 'assets/story/desert.png', yue: 'assets/story/room.png', zhong: 'assets/story/rain.png', bright: 'assets/story/empty.png', room: 'assets/story/room.png', card: null };
   var CHAPTERS = { spring: '一 · 春', duan: '二 · 断', tu: '三 · 途', yue: '四 · 月', zhong: '尾声 · 种', bright: '四 · 月' };
   var DECISIONS = [
     null,
@@ -41,6 +41,8 @@
   };
   var sdk = window.YorollInteractive && window.YorollInteractive.create({ onStatus: onStatus, media: PLAYER_CONFIG.media });
   var demo = false, videoMode = false, busy = false, gesture = false;
+  var storyboard = window.GaiaStoryboard && window.GaiaStoryboard.create({stage: el.stage, onCaption: function(text) { el.caption.textContent = text; }});
+  function storyboardKey(node) { var c = classify(actionOf(node)); return !node.parent_id ? 'opening' : c.final || (c.d ? String(c.d) + c.side : 'opening'); }
   var nodes = [], jobs = [], selected = null, activeVideo = el.video, visibleJob = null;
   var retryMediaJob = null, retryFrameJob = null, preparedNodes = Object.create(null);
   var previousVisibleJobId = null, playbackTime = 0, viewGeneration = 0;
@@ -308,8 +310,9 @@
     el.action.disabled = !allowed; el.send.disabled = !allowed;
     el.start.disabled = busy || pending;
     el['demo-start'].disabled = busy || pending;
+    el['demo-start'].hidden = !sdk || !sdk.configured;
     el['start-overlay'].hidden = busy || pending || Boolean(selected && (demo || !videoMode || visibleJob || !canOpen()));
-    el.start.textContent = !sdk || !sdk.configured ? '▶ 开始演示' : selected && videoMode ? state().opening_error ? '▶ 重试开场' : '▶ 播放开场' : '▶ 开始';
+    el.start.textContent = !sdk || !sdk.configured ? '▶ 开始故事' : selected && videoMode ? state().opening_error ? '▶ 重试开场' : '▶ 播放开场' : '▶ 开始';
     el.demo.disabled = busy || pending;
     el.demo.textContent = demo ? (!sdk || !sdk.configured ? '返回标题' : '回到实时影像') : '离线演示';
     el.restart.disabled = busy || pending;
@@ -345,7 +348,7 @@
       return;
     }
     (node.choices || []).slice(0, 2).forEach(function (choice, index) { addChoice(index + 1, choice, function () { send(choice); }, { live: true }); });
-    addChoice((node.choices || []).slice(0, 2).length + 1, '或者，写下她会做的事', openWriter, { live: true, alt: true });
+    if (!demo || !storyboard) addChoice((node.choices || []).slice(0, 2).length + 1, '或者，写下她会做的事', openWriter, { live: true, alt: true });
   }
   function renderNode(node) {
     if (!node) return;
@@ -522,10 +525,11 @@
   var clipWaiter = null, corridorDone = Object.create(null);
   function afterClip(node, fn) {
     if (clipWaiter) clipWaiter.cancel();
-    var done = false, video = !demo && videoMode && visibleJob ? activeVideo : null, timer = null;
-    function cleanup() { if (video) video.removeEventListener('ended', fire); clearTimeout(timer); }
-    function fire() { if (done) return; done = true; cleanup(); clipWaiter = null; if (selected && selected.id === node.id) fn(); }
+    var done = false, video = !demo && videoMode && visibleJob ? activeVideo : null, timer = null, unsubscribe = null;
+    function cleanup() { if (video) video.removeEventListener('ended', fire); clearTimeout(timer); if (unsubscribe) unsubscribe(); }
+    function fire() { if (done) return; done = true; cleanup(); clipWaiter = null; if (demo && storyboard) storyboard.finish(); if (selected && selected.id === node.id) fn(); }
     if (video) video.addEventListener('ended', fire);
+    else if (demo && storyboard) unsubscribe = storyboard.after(fire);
     else timer = setTimeout(fire, 2600);
     clipWaiter = { fire: fire, cancel: function () { done = true; cleanup(); clipWaiter = null; } };
   }
@@ -534,12 +538,13 @@
     el.stopfx.removeAttribute('data-stop'); el.warm.classList.remove('on');
     closePaper(); hideReplay();
     applyChapter(chapterOf(node), true);
+    if (demo && storyboard) { demoVideo.pause(); demoVideo.hidden = true; storyboard.play(storyboardKey(node)); }
     var branch = branchOf(node), end = endingOf(node), c = classify(actionOf(node));
     if (end) afterClip(node, function () { showEnding(node, end); });
     else if (branch) afterClip(node, function () { showFragment(node, branch); });
     else if (c.d === 4 && c.side === 'A') afterClip(node, function () { showTerminal(node); });
     else if (isRoom(node)) {
-      if (!corridorDone[node.id]) startCorridor(node);
+      if (!corridorDone[node.id]) { if (demo && storyboard) afterClip(node, function () { startCorridor(node); }); else startCorridor(node); }
       else afterClip(node, openPaper);
     } else if (clipWaiter) clipWaiter.cancel();
   }
@@ -777,6 +782,7 @@
   var DEMO_CLIP = { local: 'assets/videos/opening.mp4', remote: 'https://d30m5bgbotw54p.cloudfront.net/media/2448a24affb8725089273629bb832cc3.mp4' };
   var demoVideo = document.getElementById('demo-video');
   function playDemoClip() {
+    if (storyboard) return;
     demoVideo.onerror = function () { if (demoVideo.getAttribute('src') !== DEMO_CLIP.remote) { demoVideo.src = DEMO_CLIP.remote; demoVideo.play().catch(function () { el['play-fallback'].hidden = false; }); } else hideDemoClip(); };
     if (!demoVideo.getAttribute('src')) demoVideo.src = DEMO_CLIP.local;
     demoVideo.currentTime = 0; demoVideo.classList.remove('fading'); demoVideo.hidden = false;
@@ -805,6 +811,7 @@
     return demoNode(parent, action, text, next ? [next.a, next.b] : ['签字', '拒绝签字']);
   }
   function clearPlayer() {
+    if (storyboard) storyboard.stop();
     viewGeneration++;
     if (preloadController) preloadController.abort(); preloadController = null;
     if (player) player.reset();
@@ -827,7 +834,7 @@
     clearPlayer(); resetScene(); demo = true; videoMode = false; jobs = []; closeDrawer();
     newRun(); logKey('开始', '开始');
     nodes = [demoNode(null, '', DEMO_TEXT.open, [DECISIONS[1].a, DECISIONS[1].b])];
-    el.mode.textContent = '离线演示';
+    el.mode.textContent = '动态分镜';
     el['opening-poster'].hidden = true;
     renderNode(nodes[0]); sceneShown(nodes[0]); playDemoClip();
     status('');
@@ -852,7 +859,7 @@
   /* ---------- Wiring ---------- */
   el.start.addEventListener('click', startLive);
   el['demo-start'].addEventListener('click', startDemo);
-  el.demo.addEventListener('click', function () { if (demo) { demo = false; selected = null; nodes = []; resetScene(); demoVideo.pause(); demoVideo.hidden = true; closeDrawer(); el.mode.textContent = ''; titleLine(); controls(); return; } startDemo(); });
+  el.demo.addEventListener('click', function () { if (demo) { demo = false; selected = null; nodes = []; resetScene(); demoVideo.pause(); demoVideo.hidden = true; if (storyboard) storyboard.stop(); closeDrawer(); el.mode.textContent = ''; titleLine(); controls(); return; } startDemo(); });
   el['action-form'].addEventListener('submit', function (event) {
     event.preventDefault();
     var text = el.action.value.trim(); if (!text) return;
@@ -952,7 +959,7 @@
   fitViewport();
   async function init() {
     titleLine(); renderTally(); applyChapter('spring', false); controls();
-    if (!sdk || !sdk.configured) { status('当前为演示版：预制开场影像与固定剧情，可体验分支选择。'); return; }
+    if (!sdk || !sdk.configured) { status('镜头会自动推进，也可暂停或切换下一镜。每个选择，都留下一段故事。'); return; }
     if (!state().access) { status('点击开始，连接实时互动服务。'); return; }
     setBusy(true);
     try { await sdk.restore(); applyAccess(state().access); await restoreView(false); }

@@ -1,5 +1,7 @@
 # 视频大模型生成与接入指南
 
+> 当前公开版已改用本地动态分镜（静态图片 + 浏览器动画），无需调用视频模型。下面的视频流程供以后升级使用。`assets/videos/opening.mp4` 仍保留为原始素材；默认分镜模式不会播放它。若要恢复旧的预制视频模式，需要关闭 storyboard 接入，不能只替换 MP4。
+
 ## 1. 这个项目现在怎样处理视频
 
 `game.js` 管理剧情与播放，`interactive.js` 是实时服务客户端，`interactive-game.json` 保存故事规则和开场首帧。首帧是 `assets/opening.webp`。

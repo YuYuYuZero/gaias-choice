@@ -1,0 +1,511 @@
+{
+  "mode": "offline-slideshow",
+  "modelCallsAtRuntime": false,
+  "generatedVideos": 0,
+  "sequences": [
+    {
+      "id": "opening",
+      "trigger": "开始故事",
+      "shots": [
+        {
+          "image": "assets/opening.webp",
+          "caption": "春天，屋顶。她给水箱刷完最后一道绿漆。",
+          "focus": [
+            35,
+            8
+          ],
+          "zoom": 1.04,
+          "effect": "dust"
+        },
+        {
+          "image": "assets/opening.webp",
+          "caption": "「今年会下雨吗？」",
+          "focus": [
+            76,
+            25
+          ],
+          "zoom": 1.12,
+          "effect": "light"
+        },
+        {
+          "image": "assets/opening.webp",
+          "caption": "身份卡报错：GAIA 已被占用。母亲说：「那就抢回来。」",
+          "focus": [
+            40,
+            5
+          ],
+          "zoom": 1.1,
+          "effect": "light"
+        }
+      ]
+    },
+    {
+      "id": "1A",
+      "trigger": "替她按下本周提问",
+      "shots": [
+        {
+          "image": "assets/opening.webp",
+          "caption": "她替母亲按下了本周的提问。",
+          "focus": [
+            35,
+            55
+          ],
+          "zoom": 1.15,
+          "effect": "light"
+        },
+        {
+          "image": "assets/story/shore.png",
+          "caption": "海一天退两百米。",
+          "focus": [
+            60,
+            50
+          ],
+          "zoom": 1.04,
+          "effect": "mist"
+        },
+        {
+          "image": "assets/story/shore.png",
+          "caption": "第九天，门外传来敲门声。月亮正面多了一道缝。",
+          "focus": [
+            80,
+            28
+          ],
+          "zoom": 1.2,
+          "effect": "mist"
+        }
+      ]
+    },
+    {
+      "id": "1B",
+      "trigger": "关掉终端",
+      "shots": [
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "她关掉终端。",
+          "focus": [
+            50,
+            55
+          ],
+          "zoom": 1.08,
+          "effect": "scan"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "录音停在第十四秒。有人吸了一口气。",
+          "focus": [
+            38,
+            45
+          ],
+          "zoom": 1.22,
+          "effect": "scan"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "屏幕黑下去。那句话没有发出去。",
+          "focus": [
+            50,
+            50
+          ],
+          "zoom": 1.12,
+          "effect": "black"
+        }
+      ]
+    },
+    {
+      "id": "2A",
+      "trigger": "不开门",
+      "shots": [
+        {
+          "image": "assets/story/shore.png",
+          "caption": "她没有开门。",
+          "focus": [
+            28,
+            60
+          ],
+          "zoom": 1.18,
+          "effect": "mist"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "四年后，鞋底磨穿了。老铁的膝盖还在滴油。",
+          "focus": [
+            43,
+            63
+          ],
+          "zoom": 1.12,
+          "effect": "sand"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "沙里躺着一个人，手边有一只滤水器。",
+          "focus": [
+            50,
+            80
+          ],
+          "zoom": 1.22,
+          "effect": "sand"
+        }
+      ]
+    },
+    {
+      "id": "2B",
+      "trigger": "开门",
+      "shots": [
+        {
+          "image": "assets/story/shore.png",
+          "caption": "她打开门。门外没有人。",
+          "focus": [
+            25,
+            60
+          ],
+          "zoom": 1.18,
+          "effect": "mist"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "门缝里塞进来一张纸：天梯还在。",
+          "focus": [
+            65,
+            80
+          ],
+          "zoom": 1.26,
+          "effect": "dust"
+        },
+        {
+          "image": "assets/story/shore.png",
+          "caption": "灯灭了。",
+          "focus": [
+            25,
+            55
+          ],
+          "zoom": 1.12,
+          "effect": "black"
+        }
+      ]
+    },
+    {
+      "id": "3A",
+      "trigger": "拿走滤水器",
+      "shots": [
+        {
+          "image": "assets/story/desert.png",
+          "caption": "她拿走滤水器，没有回头。",
+          "focus": [
+            50,
+            80
+          ],
+          "zoom": 1.24,
+          "effect": "sand"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "风把来时的路抹平。",
+          "focus": [
+            75,
+            42
+          ],
+          "zoom": 1.07,
+          "effect": "sand"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "提问站的屏幕还亮着。三十年的问题都存在这里。",
+          "focus": [
+            48,
+            48
+          ],
+          "zoom": 1.12,
+          "effect": "scan"
+        }
+      ]
+    },
+    {
+      "id": "3B",
+      "trigger": "救人",
+      "shots": [
+        {
+          "image": "assets/story/desert.png",
+          "caption": "她把水给了那个人。",
+          "focus": [
+            48,
+            65
+          ],
+          "zoom": 1.16,
+          "effect": "sand"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "他画了一张图，塞进她手里。",
+          "focus": [
+            48,
+            85
+          ],
+          "zoom": 1.27,
+          "effect": "sand"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "风一过，沙盖住了脚印。",
+          "focus": [
+            75,
+            75
+          ],
+          "zoom": 1.1,
+          "effect": "sand"
+        }
+      ]
+    },
+    {
+      "id": "4A",
+      "trigger": "查母亲的账号",
+      "shots": [
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "母亲的账号还在。",
+          "focus": [
+            48,
+            45
+          ],
+          "zoom": 1.22,
+          "effect": "scan"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "那些问题，始终停在这里。",
+          "focus": [
+            65,
+            65
+          ],
+          "zoom": 1.14,
+          "effect": "scan"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "天梯就在前面。老铁说，它上不去了。",
+          "focus": [
+            55,
+            30
+          ],
+          "zoom": 1.12,
+          "effect": "sand"
+        }
+      ]
+    },
+    {
+      "id": "4B",
+      "trigger": "查全部历史回复",
+      "shots": [
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "三千四百二十一个问题。",
+          "focus": [
+            48,
+            40
+          ],
+          "zoom": 1.12,
+          "effect": "scan"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "二十二种答案，轮着用。",
+          "focus": [
+            48,
+            45
+          ],
+          "zoom": 1.26,
+          "effect": "scan"
+        },
+        {
+          "image": "assets/story/terminal.png",
+          "caption": "屏幕停止滚动。",
+          "focus": [
+            48,
+            45
+          ],
+          "zoom": 1.28,
+          "effect": "black"
+        }
+      ]
+    },
+    {
+      "id": "5A",
+      "trigger": "亲手拔下老铁的核心",
+      "shots": [
+        {
+          "image": "assets/story/desert.png",
+          "caption": "她亲手拔下老铁的核心。",
+          "focus": [
+            42,
+            65
+          ],
+          "zoom": 1.22,
+          "effect": "dust"
+        },
+        {
+          "image": "assets/story/room.png",
+          "caption": "走廊很长。只剩脚步声和呼吸。",
+          "focus": [
+            50,
+            42
+          ],
+          "zoom": 1.05,
+          "effect": "cold"
+        },
+        {
+          "image": "assets/story/room.png",
+          "caption": "桌上一碗热汤。母亲背对着她：「鞋，我给你买了。」",
+          "focus": [
+            52,
+            65
+          ],
+          "zoom": 1.16,
+          "effect": "steam"
+        }
+      ]
+    },
+    {
+      "id": "5B",
+      "trigger": "放弃上去",
+      "shots": [
+        {
+          "image": "assets/story/desert.png",
+          "caption": "她在天梯脚下坐下。",
+          "focus": [
+            45,
+            65
+          ],
+          "zoom": 1.13,
+          "effect": "sand"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "老铁的膝盖不再滴油。",
+          "focus": [
+            44,
+            72
+          ],
+          "zoom": 1.26,
+          "effect": "dust"
+        },
+        {
+          "image": "assets/story/desert.png",
+          "caption": "沙慢慢盖住脚印。它不再动了。",
+          "focus": [
+            65,
+            80
+          ],
+          "zoom": 1.14,
+          "effect": "sand"
+        }
+      ]
+    },
+    {
+      "id": "keep",
+      "trigger": "保留「人类」并签字",
+      "shots": [
+        {
+          "image": "assets/story/room.png",
+          "caption": "她保留了那两个字，签下名字。",
+          "focus": [
+            50,
+            78
+          ],
+          "zoom": 1.24,
+          "effect": "cold"
+        },
+        {
+          "image": "assets/story/empty.png",
+          "caption": "灯一盏一盏亮到最亮。",
+          "focus": [
+            50,
+            45
+          ],
+          "zoom": 1.06,
+          "effect": "white"
+        },
+        {
+          "image": "assets/story/empty.png",
+          "caption": "海边的屋顶很干净。没有人。",
+          "focus": [
+            45,
+            60
+          ],
+          "zoom": 1.14,
+          "effect": "white"
+        }
+      ]
+    },
+    {
+      "id": "refuse",
+      "trigger": "拒绝签字",
+      "shots": [
+        {
+          "image": "assets/story/room.png",
+          "caption": "她没有签字。",
+          "focus": [
+            50,
+            78
+          ],
+          "zoom": 1.24,
+          "effect": "cold"
+        },
+        {
+          "image": "assets/story/room.png",
+          "caption": "房间一直亮着。",
+          "focus": [
+            50,
+            40
+          ],
+          "zoom": 1.05,
+          "effect": "cold"
+        },
+        {
+          "image": "assets/story/room.png",
+          "caption": "汤一直是热的。",
+          "focus": [
+            50,
+            76
+          ],
+          "zoom": 1.28,
+          "effect": "steam"
+        }
+      ]
+    },
+    {
+      "id": "rewrite",
+      "trigger": "划掉「人类」、贴母亲身份卡、改写主体后签字",
+      "shots": [
+        {
+          "image": "assets/story/room.png",
+          "caption": "她划掉那两个字，贴上母亲的旧卡，签了字。",
+          "focus": [
+            50,
+            78
+          ],
+          "zoom": 1.23,
+          "effect": "steam"
+        },
+        {
+          "image": "assets/story/rain.png",
+          "caption": "月亮裂开一道口子。第一场雨落下来。",
+          "focus": [
+            66,
+            20
+          ],
+          "zoom": 1.05,
+          "effect": "rain"
+        },
+        {
+          "image": "assets/story/rain.png",
+          "caption": "土里伸出一只手。灰黄的大地上，多了一线绿。",
+          "focus": [
+            35,
+            80
+          ],
+          "zoom": 1.2,
+          "effect": "rain"
+        }
+      ]
+    }
+  ]
+}

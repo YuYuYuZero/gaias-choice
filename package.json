@@ -5,6 +5,7 @@
   "description": "盖娅的选择 — static interactive story",
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "check": "node --check game.js && node --check interactive.js"
+    "check": "node --check game.js && node --check interactive.js && node --check storyboard.js",
+    "test": "node --test tests/storyboard.test.cjs"
   }
 }
