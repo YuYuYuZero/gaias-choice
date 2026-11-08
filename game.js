@@ -16,7 +16,7 @@
     decodeTimeoutMs: 30000, playTimeoutMs: 15000, stallTimeoutMs: 15000
   };
   // Chapter stills are optional; missing ones fall back to the opening frame under the chapter's colour grade.
-  var STILLS = { spring: 'assets/opening.webp', duan: 'assets/story/shore.png', tu: 'assets/story/desert.png', yue: 'assets/story/room.png', zhong: 'assets/story/rain.png', bright: 'assets/story/empty.png', room: 'assets/story/room.png', card: null };
+  var STILLS = { spring: 'assets/opening.webp', duan: 'assets/story/shore.png', tu: 'assets/story/desert.png', yue: 'assets/story/room.png', zhong: 'assets/story/rain.png', bright: 'assets/story/empty.png', room: 'assets/story/room.png', card: 'assets/story/card.webp' };
   var CHAPTERS = { spring: '一 · 春', duan: '二 · 断', tu: '三 · 途', yue: '四 · 月', zhong: '尾声 · 种', bright: '四 · 月' };
   var DECISIONS = [
     null,
@@ -507,7 +507,6 @@
       if (demo) {
         var node = demoTurn(selected, action); nodes.push(node);
         status('', 'busy');
-        await new Promise(function (resolve) { setTimeout(resolve, 600); });
         hideDemoClip(); renderNode(node); sceneShown(node);
         status('');
       } else {
@@ -790,14 +789,14 @@
   ],
   "3": [
     "她取走滤水器，把仅剩的水留在那人手边，随后转身赶路。她不知道那点水能不能救他。老铁一路没有说话。第八天，他们抵达提问站。这里存着母亲的账号，也存着三十年的历史回复。",
-    "她留下给那个人喂水。等他醒来，水壶已经空了。他画出一口检修井和通向天梯的路线。她与老铁绕路补水，多走了一夜。第九天，他们终于抵达提问站。母亲的账号与历史回复都还在。"
+    "她留下给那个人喂水。等他醒来，水壶已经空了。他指明检修井的位置，她把路线记在纸上。他们绕路补水，多走了一夜。第九天，他们终于抵达提问站。母亲的账号与历史回复都还在。"
   ],
   "4": [
     "母亲的最后一条工作记录写着：月球系统只保护授权主体，其他生命都可能被当作资源。生态监护员的卡可认证 GAIA。若主体是整个生物圈，系统必须停止抽水，释放月球储水。离开提问站后，他们抵达天梯。备用电源已坏，供电槽与老铁的核心相同。老铁打开胸口：「我的核心够送你上去。拔下来，我就停了。你自己选。」",
     "三千四百二十一个问题，二十二种答案轮换。它从未真正回答任何人。档案末页却有母亲的批注：监护员旧卡可认证 GAIA，让整个生物圈成为保护主体。补充规则：保护主体覆盖地球生物圈时，停止抽水，释放月球储水。她抄下这条规则。他们抵达天梯。电源已坏，只有老铁的核心能供电。老铁打开胸口：「拔下来，我就停了。你自己选。」"
   ],
   "5": [
-    "她把手放在老铁胸前。它说：「去吧。记得看看她是不是真的在那里。」她取出核心，装进天梯供电槽。老铁的声音停了，升降舱开始向上。舷窗外，地球越来越小。舱门在月球站打开，前面是一条通向白门的走廊。",
+    "她把手放在老铁肩上。它说：「去吧。」她取出核心。老铁的声音停了，眼里的光也熄了。她把核心装进天梯供电槽，锁扣合拢，升降舱开始向上。舷窗外，地球越来越小。她握着母亲留下的旧卡。舱门在月球站打开。走廊尽头，一扇白门紧闭着。",
     "她合上老铁的胸盖，放弃登梯，陪它在沙地上坐下。核心尚能维持声音，却已不能带动它走路。老铁播放母亲留下的最后一段留言。「别把接待投影当成我。要看他们让你签的那张纸。」天梯渐渐熄灭。"
   ],
   "keep": "她保留「人类」，签字。系统宣布：为保存人类样本，清除地表其余生态。月球灯光升到最亮，海边被划成无人保存区。她和人类样本留在月球。熟悉的屋顶空了，再也等不到雨。",
@@ -970,6 +969,7 @@
     else if (visible(el['paper-wrap'])) handled = hit(el['paper-actions']);
     else if (visible(el['start-overlay'])) handled = key === '2' ? (el['demo-start'].click(), label = '离线演示', true) : (el.start.click(), label = '开始', true);
     else if (visible(el['play-fallback']) && (key === ' ' || key === 'Enter')) handled = (el['play-fallback'].click(), label = '播放', true);
+    else if (demo && storyboardPlaying && storyboard && (key === ' ' || key === 'Enter')) { storyboard.next(); handled = true; label = '下一镜'; }
     else handled = hit(el.choices);
     if (handled) { event.preventDefault(); logKey(name, '[' + name + '] ' + (label || '')); }
   });

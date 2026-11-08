@@ -37,6 +37,188 @@
       "path": "assets/story/empty.png",
       "source": "exec-62c15c36-42be-43f9-a8be-a77b8f9359f0.png",
       "status": "generated-and-visually-inspected"
+    },
+    {
+      "id": "card",
+      "path": "assets/story/card.webp",
+      "source": "exec-458c3e6f-3bfc-404e-b4ee-d51f062c67a8.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "home_terminal",
+      "path": "assets/story/home_terminal.webp",
+      "source": "exec-c82651fb-5c46-4a30-b4a4-c1304e62839c.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "departure",
+      "path": "assets/story/departure.webp",
+      "source": "exec-24583de1-a0f5-4afb-b2c4-5051002c7a0f.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "dry_sea",
+      "path": "assets/story/dry_sea.webp",
+      "source": "exec-36794aeb-43e9-42a7-b0d5-9ead97d57d87.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "door",
+      "path": "assets/story/door.webp",
+      "source": "exec-425c2a2a-485f-40a3-999a-35a46d94992b.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "note",
+      "path": "assets/story/note.webp",
+      "source": "exec-0a87feba-0214-4ad0-9940-a6d0ac7e8690.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "journey",
+      "path": "assets/story/journey.webp",
+      "source": "exec-0f5fe8aa-b33c-4db1-be04-71aba7803465.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "meeting",
+      "path": "assets/story/meeting.webp",
+      "source": "exec-118bfd0d-880e-47c6-bbbc-7a70176407f8.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "survivor",
+      "path": "assets/story/survivor.webp",
+      "source": "exec-12ace588-b01d-4b2c-8a87-ab96fdbc2145.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "rescue",
+      "path": "assets/story/rescue.webp",
+      "source": "exec-b71f758b-8be8-4d3f-919a-8148ef9c90db.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "map",
+      "path": "assets/story/map.webp",
+      "source": "exec-5b9e7259-df18-45be-9cc9-84191811d3e1.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "archives",
+      "path": "assets/story/archives.webp",
+      "source": "exec-c4d67e15-dcfd-4dc2-a7e9-78474604c014.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "tower",
+      "path": "assets/story/tower.webp",
+      "source": "exec-dd55d2b1-811b-4aec-ade7-b09fec268bdc.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "core_open",
+      "path": "assets/story/core_open.webp",
+      "source": "exec-c6126c08-5e51-4bd8-a157-81e94f86ecaf.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "core_removed",
+      "path": "assets/story/core_removed.webp",
+      "source": "exec-85909d04-bb79-46d8-8372-271ebecdc6ad.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "socket",
+      "path": "assets/story/socket.webp",
+      "source": "exec-ad924c7e-93db-4047-bfd4-a48f3d928ee5.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "ascent",
+      "path": "assets/story/ascent.webp",
+      "source": "exec-fed8ca3c-6b96-45e4-8467-4ab9741cb3d4.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "corridor",
+      "path": "assets/story/corridor.webp",
+      "source": "exec-4079b67f-96be-4de3-b8b9-01707a3bfbe4.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "projection",
+      "path": "assets/story/projection.webp",
+      "source": "exec-292616da-f100-4182-8c3f-fa02aebe4c48.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "soup_shoes",
+      "path": "assets/story/soup_shoes.webp",
+      "source": "exec-c8f24679-4fb9-42f7-ab35-25858656c8ee.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "signature",
+      "path": "assets/story/signature.webp",
+      "source": "exec-c571b5d4-c720-44a3-bb3c-002ec7523747.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "moon_water",
+      "path": "assets/story/moon_water.webp",
+      "source": "exec-5c924580-7a3b-4178-b90f-9c02b771f84d.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "stay",
+      "path": "assets/story/stay.webp",
+      "source": "exec-a0c9404a-9cbd-4e6b-a36e-1312aa6ab12e.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "filter",
+      "path": "assets/story/filter.webp",
+      "source": "exec-9e8bac95-b4cb-4b0f-a45f-d10dff535ba0.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "farewell",
+      "path": "assets/story/farewell.webp",
+      "source": "exec-c133aa80-f5f4-4216-bbbd-9ebbd62b2c44.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
+    },
+    {
+      "id": "reunion",
+      "path": "assets/story/reunion.webp",
+      "source": "exec-b39c3d1e-f41c-4b84-9ac2-2428ad5fcdfe.png",
+      "status": "generated-and-visually-inspected",
+      "encoding": "WebP quality 88, original dimensions"
     }
   ]
 }

@@ -137,6 +137,33 @@
         "推门后的重逢未播完时授权书和选项均隐藏；播放完成才显示授权书",
         "浏览器未见脚本错误"
       ]
+    },
+    {
+      "date": "2026-11-08",
+      "complaint": "补齐剧情图片、增加信息密度、随字幕切换；有动画优先动画，下一幕刷新画面",
+      "rootCause": "大量字幕共用场景图；开场 MP4 未接入分镜；缺少媒体切换的明确生命周期和分支画面重复检测",
+      "filesChanged": [
+        "storyboard.js",
+        "game.js",
+        "style.css",
+        "index.html",
+        "assets/story/*.webp",
+        "asset_manifest/story-images.json",
+        "asset_manifest/storyboard.json",
+        "asset_manifest/story-prompts-v2.json",
+        "tests/storyboard.test.cjs",
+        "docs/STORYBOARD.md",
+        "docs/VIDEO-GENERATION.md"
+      ],
+      "fix": "内置 image_gen 新增26张剧情图，保留原图并将网站版本编码为约5.85 MB的WebP；全故事57镜；图片和字幕同步提交；优先已有视频，错误/超时/受限回退图片；切镜取消旧加载和视频、重启动效；预载下一图；去除离线分支600ms假等待；空格回车切镜；各分支首帧不与上幕末帧重复",
+      "verified": [
+        "26张新增图均逐张查看",
+        "语法检查与8项测试通过：16条故事路线、57镜资源、分支切图、加载竞态、暂停重播、视频回退、剧情门控",
+        "本地浏览器确认开场MP4播放、下一镜切至旧卡图并同步字幕",
+        "本地走通按提问→不开门→救人→查账号→取核心→五镜登梯→走廊→四镜重逢→授权书",
+        "本地浏览器无脚本错误；重逢结束前授权书隐藏",
+        "没有提交付费视频模型任务"
+      ]
     }
   ]
 }

@@ -1,0 +1,166 @@
+{
+  "mode": "built-in image_gen",
+  "reference": [
+    "assets/opening.webp",
+    "assets/story/desert.png",
+    "assets/story/room.png"
+  ],
+  "assets": [
+    {
+      "id": "card",
+      "path": "assets/story/card.webp",
+      "prompt": "Close-up of mother handing GAIA ecological guardian card to girl; opening image reference.",
+      "source": "exec-458c3e6f-3bfc-404e-b4ee-d51f062c67a8.png"
+    },
+    {
+      "id": "home_terminal",
+      "path": "assets/story/home_terminal.webp",
+      "prompt": "Use case: illustration-story. ONE independent photorealistic cinematic 16:9 landscape story still. Reference only for character identity and muted film style. The 14-year-old short-haired girl sits at a battered small CRT terminal in her coastal home, green water tank visible through doorway. Her finger hovering over one worn keyboard key. An unlit voice recorder and folded work card nearby. CRT shows only pale indistinct rows, no readable words. Warm sea light. Natural lighting, restrained sci-fi, film grain, lived-in material detail. No collage, panels, border, captions, watermark; only requested text if any.",
+      "source": "exec-c82651fb-5c46-4a30-b4a4-c1304e62839c.png"
+    },
+    {
+      "id": "departure",
+      "path": "assets/story/departure.webp",
+      "prompt": "Use case: illustration-story. ONE independent photorealistic cinematic 16:9 landscape story still. Reference only for character identity and muted film style. The mother seen from behind in pale blouse and dark skirt boards a modest weathered passenger launch at a coastal concrete pier, small bag in hand. The short-haired teenage girl in olive jacket stands on pier watching. Receding boat, hazy moon overhead, quiet goodbye, wide establishing shot. Natural lighting, restrained sci-fi, film grain, lived-in material detail. No collage, panels, border, captions, watermark; only requested text if any.",
+      "source": "exec-24583de1-a0f5-4afb-b2c4-5051002c7a0f.png"
+    },
+    {
+      "id": "dry_sea",
+      "path": "assets/story/dry_sea.webp",
+      "prompt": "Use case: illustration-story. ONE independent photorealistic cinematic 16:9 landscape story still. Reference only for character identity and muted film style. The same coast after severe sea retreat: abandoned fishing boats stranded across broad cracked seabed, old pier towering above dry earth, water line far away, massive narrow water-transfer conduit climbing toward pale moon on horizon. No people. Cold grey documentary landscape. Natural lighting, restrained sci-fi, film grain, lived-in material detail. No collage, panels, border, captions, watermark; only requested text if any.",
+      "source": "exec-36794aeb-43e9-42a7-b0d5-9ead97d57d87.png"
+    },
+    {
+      "id": "door",
+      "path": "assets/story/door.webp",
+      "prompt": "Use case: illustration-story. ONE independent photorealistic cinematic 16:9 landscape story still. Reference only for character identity and muted film style. Inside the girl's humble coastal home, teenager in olive jacket stands in profile beside a CLOSED weathered timber door. A narrow light under door, dust and a small moving shadow outside; no desert terminal, no moon room. Uneasy quiet. Eye-level cinematic frame. Natural lighting, restrained sci-fi, film grain, lived-in material detail. No collage, panels, border, captions, watermark; only requested text if any.",
+      "source": "exec-425c2a2a-485f-40a3-999a-35a46d94992b.png"
+    },
+    {
+      "id": "note",
+      "path": "assets/story/note.webp",
+      "prompt": "Use case: illustration-story. ONE independent photorealistic cinematic 16:9 landscape story still. Reference only for character identity and muted film style. Low close-up of an OPEN coastal house door: small folded paper on threshold with ONLY the four Chinese characters 天梯还在, faint narrow robot tread marks in dusty ground leading away. Worn white canvas shoe of girl at edge of frame. Cool grey early morning. Natural lighting, restrained sci-fi, film grain, lived-in material detail. No collage, panels, border, captions, watermark; only requested text if any.",
+      "source": "exec-0a87feba-0214-4ad0-9940-a6d0ac7e8690.png"
+    },
+    {
+      "id": "journey",
+      "path": "assets/story/journey.webp",
+      "prompt": "Use case: illustration-story. ONE independent photorealistic cinematic 16:9 landscape story still. Reference only for character identity and muted film style. Four years later, same girl now clearly an eighteen-year-old young woman, short black hair, oversized worn olive jacket, long practical dark trousers, worn white canvas shoes, small bag. She leaves the empty coastal rooftops on a dusty maintenance road stretching into arid land. Back view wide shot; no companion yet. Natural lighting, restrained sci-fi, film grain, lived-in material detail. No collage, panels, border, captions, watermark; only requested text if any.",
+      "source": "exec-0f5fe8aa-b33c-4db1-be04-71aba7803465.png"
+    },
+    {
+      "id": "meeting",
+      "path": "assets/story/meeting.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Eighteen-year-old short-haired young woman in worn olive jacket, practical long trousers and old white canvas shoes finds the rusty humanoid robot on an abandoned maintenance road. She holds out her mother's small metal card; the robot leans forward recognizing it. Mid-wide shot with windblown sand and industrial signposts without text. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-118bfd0d-880e-47c6-bbbc-7a70176407f8.png"
+    },
+    {
+      "id": "survivor",
+      "path": "assets/story/survivor.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. A tired adult traveler lies on his side in desert shade, alive, no wounds or blood. A cylindrical hand-pump water filter and nearly empty canteen clearly visible by his hand. Young woman and rusty robot approach in background, camera low at traveler's level. Serious, humane, no horror. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-12ace588-b01d-4b2c-8a87-ab96fdbc2145.png"
+    },
+    {
+      "id": "rescue",
+      "path": "assets/story/rescue.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Same eighteen-year-old short-haired olive-jacketed young woman kneels beside the exhausted adult traveler in sand, gently gives him water from a canteen. Robot watches beside them, hands ready to help. Water filter visible, warm dusty sun, natural anatomy, compassionate moment, no injury or blood. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-b71f758b-8be8-4d3f-919a-8148ef9c90db.png"
+    },
+    {
+      "id": "map",
+      "path": "assets/story/map.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Close view of weathered traveler's hands drawing a route on creased paper on the sand, marking a water well with a blue circle and tall elevator with an ink line. Young woman's sleeve and robot's rusty finger at edges. No legible words, just clear map symbols. Sunlit paper texture. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-5b9e7259-df18-45be-9cc9-84191811d3e1.png"
+    },
+    {
+      "id": "archives",
+      "path": "assets/story/archives.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Over-the-shoulder shot of eighteen-year-old young woman reading old CRT archival terminal in deserted maintenance station. Close enough to show dusty stack of cards, ecological leaf emblem, worn metal GAIA card and a schematic of Earth, moon water reservoir and pipe drawn on paper. CRT dense small rows blurred, no fake readable paragraphs. Cold green phosphor light. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-c4d67e15-dcfd-4dc2-a7e9-78474604c014.png"
+    },
+    {
+      "id": "tower",
+      "path": "assets/story/tower.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Wide ground-level view of gigantic slender space elevator base in windswept desert. Clearly eighteen-year-old olive-jacketed young woman and rusty humanoid robot stand tiny before a dead lift gate. Open power socket panel near gate, failed cables hanging, immense tower rising out of frame. Muted amber, cinematic scale. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-dd55d2b1-811b-4aec-ade7-b09fec268bdc.png"
+    },
+    {
+      "id": "core_open",
+      "path": "assets/story/core_open.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Medium close-up of rusty humanoid robot sitting beside dead space elevator gate, its chest panel OPEN revealing a small cylindrical amber energy core held in metal clamps. The young woman's olive sleeve hand rests gently beside panel, not removing it yet. Robot's single round eye still illuminated. Deliberate quiet decision. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-c6126c08-5e51-4bd8-a157-81e94f86ecaf.png"
+    },
+    {
+      "id": "core_removed",
+      "path": "assets/story/core_removed.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Emotional close-up: eighteen-year-old young woman with short black hair and olive work jacket holds a cylindrical amber robot energy core in BOTH hands, just removed from the robot's open empty chest socket. Robot now slumped and eye unlit. Same rusty robot design as reference. No gore, no weapons, restrained cinematic sacrifice. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-85909d04-bb79-46d8-8372-271ebecdc6ad.png"
+    },
+    {
+      "id": "socket",
+      "path": "assets/story/socket.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Close-up of young woman's olive-sleeved hands inserting a cylindrical amber power core into matching industrial elevator wall socket. Metal locking clamps, old unlit lamps just beginning to glow, scratches and rust. No people faces, no readable text. The core clearly powers the lift. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-ad924c7e-93db-4047-bfd4-a48f3d928ee5.png"
+    },
+    {
+      "id": "ascent",
+      "path": "assets/story/ascent.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape still for the same story. Reference images only for character identity, rusty robot and muted film-grain style. Inside a small worn space elevator cabin at high altitude, eighteen-year-old short black-haired young woman in olive jacket watches the curved Earth far below through a large porthole. She holds the worn metal card in one hand. Dark space beyond, realistic restrained industrial spacecraft, cinematic blue-white lighting. No montage, no border, no subtitles or watermark. Adult journey character is eighteen, no green paint on face.",
+      "source": "exec-fed8ca3c-6b96-45e4-8467-4ab9741cb3d4.png"
+    },
+    {
+      "id": "corridor",
+      "path": "assets/story/corridor.webp",
+      "prompt": "Use case: illustration-story. ONE standalone photorealistic cinematic 16:9 landscape still, same film grain and muted style as references. An EMPTY long symmetrical cold white lunar-station corridor ending at a CLOSED white door. No people anywhere, no mother, no soup, no windows. Worn practical panels, a few small floor lights, profound silence, one-point perspective. This is BEFORE the mother reveal. No montage, no comic panels, no border, no subtitles, no watermark.",
+      "source": "exec-4079b67f-96be-4de3-b8b9-01707a3bfbe4.png"
+    },
+    {
+      "id": "projection",
+      "path": "assets/story/projection.webp",
+      "prompt": "Use case: illustration-story. ONE standalone photorealistic cinematic 16:9 landscape still, same film grain and muted style as references. Inside a cold white lunar reception room, mother in pale blouse and dark skirt seen from behind, her figure subtly translucent with fine horizontal projection bands and a small projector on floor. Eighteen-year-old short-haired woman in olive jacket and long trousers watches from foreground, face in quiet realization. A bowl of soup on table. No text, no windows or extra moons. No montage, no comic panels, no border, no subtitles, no watermark.",
+      "source": "exec-292616da-f100-4182-8c3f-fa02aebe4c48.png"
+    },
+    {
+      "id": "soup_shoes",
+      "path": "assets/story/soup_shoes.webp",
+      "prompt": "Use case: illustration-story. ONE standalone photorealistic cinematic 16:9 landscape still, same film grain and muted style as references. Intimate still-life in cold white lunar room: steaming ceramic soup bowl on a metal table, beside it a pair of NEW clean white canvas shoes, sealed thin folder and small old GAIA metal card. In distant blurred background a pale ghostlike female silhouette facing away. Cinematic, restrained grief, no text except GAIA. No montage, no comic panels, no border, no subtitles, no watermark.",
+      "source": "exec-c8f24679-4fb9-42f7-ab35-25858656c8ee.png"
+    },
+    {
+      "id": "signature",
+      "path": "assets/story/signature.webp",
+      "prompt": "Use case: illustration-story. ONE standalone photorealistic cinematic 16:9 landscape still, same film grain and muted style as references. Close-up of an eighteen-year-old woman's olive-sleeved hand holding a pen above a formal authorization sheet on cold metal table. Old metal ecological guardian card with leaf emblem and GAIA laid across a crossed-out line. Small bowl of soup out of focus. Fine printed lines are illegible. Tactile paper, decision moment, no faces. No montage, no comic panels, no border, no subtitles, no watermark.",
+      "source": "exec-c571b5d4-c720-44a3-bb3c-002ec7523747.png"
+    },
+    {
+      "id": "moon_water",
+      "path": "assets/story/moon_water.webp",
+      "prompt": "Use case: illustration-story. ONE standalone photorealistic cinematic 16:9 landscape still, same film grain and muted style as references. Wide cinematic realistic science-fiction exterior of the Moon: artificial reservoir shell opening along a long narrow luminous seam, water-control structures and enormous enclosed pipelines redirect flow toward distant blue Earth. No magical water floating through space; pipes and open mechanical dam gates make the process clear. Black sky, blue-white industrial lighting, no captions. No montage, no comic panels, no border, no subtitles, no watermark.",
+      "source": "exec-5c924580-7a3b-4178-b90f-9c02b771f84d.png"
+    },
+    {
+      "id": "stay",
+      "path": "assets/story/stay.webp",
+      "prompt": "Use case: illustration-story. ONE standalone photorealistic cinematic 16:9 landscape still, same film grain and muted style as references. Wide desert dusk at the space elevator base. Eighteen-year-old short-haired woman in olive jacket, long dark trousers and white canvas shoes sits peacefully beside rusty old humanoid robot, chest CLOSED and single eye faintly lit. They face distant horizon together; lift gate dark behind them. Wind traces sand around their feet, bittersweet choice, no death or wounds. No montage, no comic panels, no border, no subtitles, no watermark.",
+      "source": "exec-a0c9404a-9cbd-4e6b-a36e-1312aa6ab12e.png"
+    },
+    {
+      "id": "filter",
+      "path": "assets/story/filter.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape frame. Match references' identity, film grain and muted colors; protagonist now clearly eighteen, no paint on face. Close-up in sunlit desert: eighteen-year-old young woman's olive-sleeved hand lifts a cylindrical hand-pump water filter from sand. A nearly empty canteen is left beside the resting adult traveler's hand. Robot's rusty legs in background. No faces, no wounds; difficult choice shown through objects. No border, montage, caption or watermark.",
+      "source": "exec-9e8bac95-b4cb-4b0f-a45f-d10dff535ba0.png"
+    },
+    {
+      "id": "farewell",
+      "path": "assets/story/farewell.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape frame. Match references' identity, film grain and muted colors; protagonist now clearly eighteen, no paint on face. Quiet farewell at dead elevator gate: eighteen-year-old short-haired young woman in olive jacket and long trousers rests her open palm on rusty humanoid robot's shoulder, looking into its single glowing eye. Robot's chest panel is open, cylindrical amber power core STILL inside. Both framed waist up, no text, dusty gold light. No border, montage, caption or watermark.",
+      "source": "exec-c133aa80-f5f4-4216-bbbd-9ebbd62b2c44.png"
+    },
+    {
+      "id": "reunion",
+      "path": "assets/story/reunion.webp",
+      "prompt": "Use case: illustration-story. ONE new standalone photorealistic cinematic 16:9 landscape frame. Match references' identity, film grain and muted colors; protagonist now clearly eighteen, no paint on face. First reveal beyond an OPEN white door in lunar reception room: eighteen-year-old young woman with short black hair, olive work jacket, long dark trousers and worn white shoes stands foreground with her back toward camera. Beyond her, mother in pale blouse and dark skirt stands back-facing beside a table with soup and new shoes. Mother appears physically solid at this moment. No windows, no extra moon, cold symmetrical lighting, restrained reunion. No border, montage, caption or watermark.",
+      "source": "exec-b39c3d1e-f41c-4b84-9ac2-2428ad5fcdfe.png"
+    }
+  ]
+}

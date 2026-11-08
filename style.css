@@ -211,7 +211,7 @@ button:focus-visible,input:focus-visible{outline:1px solid var(--accent);outline
 
 /* Offline illustrated sequences: two layers crossfade while the camera drifts. */
 .story-cinema{position:absolute;inset:0;z-index:1;overflow:hidden;background:#111}
-.story-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.25s ease;animation:story-camera 10s ease-out both;will-change:transform,opacity}
+.story-still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;animation:story-camera 10s ease-out both;will-change:transform,opacity}
 .story-still.is-visible{opacity:1}
 @keyframes story-camera{from{transform:scale(1.01)}to{transform:scale(var(--shot-zoom,1.14))}}
 .story-atmosphere{position:absolute;inset:-10%;pointer-events:none;transition:background 1.5s,opacity 1.5s;opacity:.35}
@@ -235,3 +235,7 @@ button:focus-visible,input:focus-visible{outline:1px solid var(--accent);outline
 .story-count{font-variant-numeric:tabular-nums;color:#c1b9a3;letter-spacing:.12em}
 .is-paused .story-still,.is-paused .story-atmosphere{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.story-still,.story-atmosphere{animation:none!important;transition:none!important}.kb{animation:none}}
+
+.story-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.story-transport{z-index:2}
+.story-cinema[data-fallback=true] .story-count::after{content:" · 备用画面";font-size:.8em}

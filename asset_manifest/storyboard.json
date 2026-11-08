@@ -1,5 +1,5 @@
 {
-  "mode": "offline-slideshow",
+  "mode": "offline-mixed-media",
   "modelCallsAtRuntime": false,
   "generatedVideos": 0,
   "sequences": [
@@ -15,10 +15,11 @@
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "light",
+          "video": "assets/videos/opening.mp4"
         },
         {
-          "image": "assets/opening.webp",
+          "image": "assets/story/card.webp",
           "caption": "母亲把旧工作卡留给她：生态监护员。卡背刻着 GAIA。",
           "focus": [
             50,
@@ -28,14 +29,14 @@
           "effect": "light"
         },
         {
-          "image": "assets/opening.webp",
+          "image": "assets/story/home_terminal.webp",
           "caption": "她想用 GAIA 登记自己的名字，终端却说：该标识已属于地球生物圈。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "scan"
         },
         {
           "image": "assets/opening.webp",
@@ -54,17 +55,17 @@
       "trigger": "1A",
       "shots": [
         {
-          "image": "assets/opening.webp",
+          "image": "assets/story/home_terminal.webp",
           "caption": "她替母亲按下本周提问。终端只回复：正在计算。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "scan"
         },
         {
-          "image": "assets/opening.webp",
+          "image": "assets/story/departure.webp",
           "caption": "母亲乘征召船离开，留下旧卡和一句「等我回来，给你买鞋」。",
           "focus": [
             50,
@@ -74,14 +75,14 @@
           "effect": "light"
         },
         {
-          "image": "assets/story/shore.png",
+          "image": "assets/story/dry_sea.webp",
           "caption": "月球调水工程启动，海水每天退去两百米。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "mist"
         },
         {
           "image": "assets/story/shore.png",
@@ -91,7 +92,7 @@
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "mist"
         }
       ]
     },
@@ -100,17 +101,17 @@
       "trigger": "1B",
       "shots": [
         {
-          "image": "assets/opening.webp",
+          "image": "assets/story/home_terminal.webp",
           "caption": "她关掉终端，把没发出去的录音保存下来。母亲没有责怪她。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "scan"
         },
         {
-          "image": "assets/opening.webp",
+          "image": "assets/story/card.webp",
           "caption": "母亲乘征召船离开，把生态监护员旧卡留在她手里。",
           "focus": [
             50,
@@ -127,7 +128,7 @@
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "mist"
         }
       ]
     },
@@ -136,27 +137,27 @@
       "trigger": "2A",
       "shots": [
         {
-          "image": "assets/story/shore.png",
+          "image": "assets/story/door.webp",
           "caption": "她没有开门。第二天，门外只剩一行通向沙地的履带印。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "mist"
         },
         {
-          "image": "assets/story/shore.png",
+          "image": "assets/story/journey.webp",
           "caption": "四年过去，母亲始终没有回来。十八岁的她带着旧卡，离开海边去找天梯。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/meeting.webp",
           "caption": "她循着废弃检修路找到老铁。它认出旧卡，答应带她去母亲工作的地方。",
           "focus": [
             50,
@@ -166,7 +167,7 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/survivor.webp",
           "caption": "出发第三天，老铁停住：前方有人倒在沙里，身边的滤水器还在运转。",
           "focus": [
             50,
@@ -192,37 +193,37 @@
       "trigger": "2B",
       "shots": [
         {
-          "image": "assets/story/shore.png",
+          "image": "assets/story/note.webp",
           "caption": "她开了门，门外没有人。纸条写着「天梯还在」，旁边是一行履带印。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "mist"
         },
         {
-          "image": "assets/story/shore.png",
+          "image": "assets/story/card.webp",
           "caption": "屋里停了电，她把纸条和母亲的旧卡收在一起。",
           "focus": [
-            50,
-            50
+            48,
+            55
           ],
-          "zoom": 1.12,
+          "zoom": 1.32,
           "effect": "light"
         },
         {
-          "image": "assets/story/shore.png",
+          "image": "assets/story/journey.webp",
           "caption": "四年后，十八岁的她循着纸条离开海边，去天梯找母亲。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/meeting.webp",
           "caption": "检修路上，老铁认出旧卡，答应带路。第三天，他们遇见了倒在沙里的人。",
           "focus": [
             50,
@@ -232,7 +233,7 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/survivor.webp",
           "caption": "她的水只够一人撑到提问站。拿走滤水器能赶路；救人就得绕路找水。",
           "focus": [
             50,
@@ -248,7 +249,7 @@
       "trigger": "3A",
       "shots": [
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/filter.webp",
           "caption": "她取走滤水器，把仅剩的水留在那人手边，随后转身赶路。",
           "focus": [
             50,
@@ -258,7 +259,7 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/survivor.webp",
           "caption": "她不知道那点水能不能救他。老铁一路没有说话。",
           "focus": [
             50,
@@ -284,7 +285,7 @@
       "trigger": "3B",
       "shots": [
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/rescue.webp",
           "caption": "她留下给那个人喂水。等他醒来，水壶已经空了。",
           "focus": [
             50,
@@ -294,8 +295,8 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
-          "caption": "他画出一口检修井和通向天梯的路线。她与老铁绕路补水，多走了一夜。",
+          "image": "assets/story/map.webp",
+          "caption": "他指明检修井的位置，她把路线记在纸上。他们绕路补水，多走了一夜。",
           "focus": [
             50,
             50
@@ -320,7 +321,7 @@
       "trigger": "4A",
       "shots": [
         {
-          "image": "assets/story/terminal.png",
+          "image": "assets/story/archives.webp",
           "caption": "母亲的最后一条工作记录写着：月球系统只保护授权主体，其他生命都可能被当作资源。",
           "focus": [
             50,
@@ -330,17 +331,17 @@
           "effect": "scan"
         },
         {
-          "image": "assets/story/terminal.png",
+          "image": "assets/story/card.webp",
           "caption": "生态监护员的卡可认证 GAIA。若主体是整个生物圈，系统必须停止抽水，释放月球储水。",
           "focus": [
-            50,
-            50
+            48,
+            55
           ],
-          "zoom": 1.12,
-          "effect": "scan"
+          "zoom": 1.32,
+          "effect": "light"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/tower.webp",
           "caption": "离开提问站后，他们抵达天梯。备用电源已坏，供电槽与老铁的核心相同。",
           "focus": [
             50,
@@ -350,14 +351,14 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/core_open.webp",
           "caption": "老铁打开胸口：「我的核心够送你上去。拔下来，我就停了。你自己选。」",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "sand"
+          "effect": "light"
         }
       ]
     },
@@ -366,7 +367,7 @@
       "trigger": "4B",
       "shots": [
         {
-          "image": "assets/story/terminal.png",
+          "image": "assets/story/archives.webp",
           "caption": "三千四百二十一个问题，二十二种答案轮换。它从未真正回答任何人。",
           "focus": [
             50,
@@ -376,14 +377,14 @@
           "effect": "scan"
         },
         {
-          "image": "assets/story/terminal.png",
+          "image": "assets/story/card.webp",
           "caption": "档案末页却有母亲的批注：监护员旧卡可认证 GAIA，让整个生物圈成为保护主体。",
           "focus": [
-            50,
-            50
+            48,
+            55
           ],
-          "zoom": 1.12,
-          "effect": "scan"
+          "zoom": 1.32,
+          "effect": "light"
         },
         {
           "image": "assets/story/terminal.png",
@@ -396,7 +397,7 @@
           "effect": "scan"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/tower.webp",
           "caption": "他们抵达天梯。电源已坏，只有老铁的核心能供电。",
           "focus": [
             50,
@@ -406,14 +407,14 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/core_open.webp",
           "caption": "老铁打开胸口：「拔下来，我就停了。你自己选。」",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "sand"
+          "effect": "light"
         }
       ]
     },
@@ -422,34 +423,54 @@
       "trigger": "5A",
       "shots": [
         {
-          "image": "assets/story/desert.png",
-          "caption": "她把手放在老铁胸前。它说：「去吧。记得看看她是不是真的在那里。」",
+          "image": "assets/story/farewell.webp",
+          "caption": "她把手放在老铁肩上。它说：「去吧。」",
           "focus": [
             50,
             50
           ],
-          "zoom": 1.12,
-          "effect": "sand"
+          "zoom": 1.1,
+          "effect": "dust"
         },
         {
-          "image": "assets/story/desert.png",
-          "caption": "她取出核心，装进天梯供电槽。老铁的声音停了，升降舱开始向上。",
+          "image": "assets/story/core_removed.webp",
+          "caption": "她取出核心。老铁的声音停了，眼里的光也熄了。",
           "focus": [
             50,
             50
           ],
-          "zoom": 1.12,
-          "effect": "sand"
+          "zoom": 1.1,
+          "effect": "dust"
         },
         {
-          "image": "assets/story/desert.png",
-          "caption": "舷窗外，地球越来越小。舱门在月球站打开，前面是一条通向白门的走廊。",
+          "image": "assets/story/socket.webp",
+          "caption": "她把核心装进天梯供电槽，锁扣合拢，升降舱开始向上。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "sand"
+          "effect": "light"
+        },
+        {
+          "image": "assets/story/ascent.webp",
+          "caption": "舷窗外，地球越来越小。她握着母亲留下的旧卡。",
+          "focus": [
+            50,
+            50
+          ],
+          "zoom": 1.08,
+          "effect": "cold"
+        },
+        {
+          "image": "assets/story/corridor.webp",
+          "caption": "舱门在月球站打开。走廊尽头，一扇白门紧闭着。",
+          "focus": [
+            50,
+            50
+          ],
+          "zoom": 1.08,
+          "effect": "cold"
         }
       ]
     },
@@ -458,44 +479,44 @@
       "trigger": "reunion",
       "shots": [
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/reunion.webp",
           "caption": "她推开门。母亲站在热汤旁，仍是四年前的模样：「鞋，我给你买了。」",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "cold"
         },
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/projection.webp",
           "caption": "她问：「你为什么不回来？」母亲没有回答，又重复了一遍同样的话。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "scan"
         },
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/soup_shoes.webp",
           "caption": "桌边铭牌写着：接待投影。人员档案：离站任务失联。她终于明白，眼前只是母亲留下的影像。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "cold"
         },
         {
-          "image": "assets/story/room.png",
-          "caption": "汤旁放着授权书：以「人类」为保护主体，其他生命可被清除。她握紧口袋里的旧卡。",
+          "image": "assets/story/card.webp",
+          "caption": "桌上是授权书。她想起母亲交来的旧卡：那枚叶子，代表整个生物圈。",
           "focus": [
-            50,
-            50
+            48,
+            55
           ],
-          "zoom": 1.12,
-          "effect": "light"
+          "zoom": 1.32,
+          "effect": "cold"
         }
       ]
     },
@@ -504,7 +525,7 @@
       "trigger": "5B",
       "shots": [
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/stay.webp",
           "caption": "她合上老铁的胸盖，放弃登梯，陪它在沙地上坐下。",
           "focus": [
             50,
@@ -514,17 +535,17 @@
           "effect": "sand"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/card.webp",
           "caption": "核心尚能维持声音，却已不能带动它走路。老铁播放母亲留下的最后一段留言。",
           "focus": [
-            50,
-            50
+            48,
+            55
           ],
-          "zoom": 1.12,
-          "effect": "sand"
+          "zoom": 1.32,
+          "effect": "light"
         },
         {
-          "image": "assets/story/desert.png",
+          "image": "assets/story/tower.webp",
           "caption": "「别把接待投影当成我。要看他们让你签的那张纸。」天梯渐渐熄灭。",
           "focus": [
             50,
@@ -540,17 +561,17 @@
       "trigger": "keep",
       "shots": [
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/signature.webp",
           "caption": "她保留「人类」，签字。系统宣布：为保存人类样本，清除地表其余生态。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "scan"
         },
         {
-          "image": "assets/story/empty.png",
+          "image": "assets/story/dry_sea.webp",
           "caption": "月球灯光升到最亮，海边被划成无人保存区。",
           "focus": [
             50,
@@ -567,7 +588,7 @@
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "mist"
         }
       ]
     },
@@ -576,34 +597,34 @@
       "trigger": "refuse",
       "shots": [
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/reunion.webp",
           "caption": "她没有签字，把旧卡收回口袋。系统等待授权，调水工程继续。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "cold"
         },
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/projection.webp",
           "caption": "母亲的投影重复着那句买鞋的话，始终不能回答她。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "scan"
         },
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/soup_shoes.webp",
           "caption": "她留在接待室里。汤一直是热的，地球依旧干涸。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "cold"
         }
       ]
     },
@@ -612,24 +633,24 @@
       "trigger": "rewrite",
       "shots": [
         {
-          "image": "assets/story/room.png",
+          "image": "assets/story/signature.webp",
           "caption": "旧卡认证通过。她将保护主体改成地球生物圈，签下名字。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "cold"
         },
         {
-          "image": "assets/story/rain.png",
+          "image": "assets/story/moon_water.webp",
           "caption": "系统停止抽水，打开月球储水层。裂开的坝壳像一道月缺，水沿输送管线回到地球。",
           "focus": [
             50,
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "cold"
         },
         {
           "image": "assets/story/rain.png",
@@ -639,9 +660,10 @@
             50
           ],
           "zoom": 1.12,
-          "effect": "light"
+          "effect": "rain"
         }
       ]
     }
-  ]
+  ],
+  "existingVideos": 1
 }
